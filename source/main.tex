@@ -242,7 +242,7 @@
 	\end{align}
 	Statorstrom
 	\begin{equation}
-	\underline{i}_{s} &= |\underline{i}_{sdq}| \cdot e^{\jmath (\arg(\underline{i}_{sdq}) + \arg(\underline{\Psi}_{M}))}
+	\underline{i}_{s} = |\underline{i}_{sdq}| \cdot e^{\jmath (\arg(\underline{i}_{sdq}) + \arg(\underline{\Psi}_{M}))}
 	\end{equation}
 	Statorspannungsgleichung
 	\begin{equation}
@@ -314,7 +314,7 @@
 	\begin{table}
 		\caption{Stromzeiger im BLDC Betrieb} \label{tab:bldc}
 		\begin{tabular}{|c|c|c|c|c|}\hline 
-			Name & $i_1$ & $i_2$ & $i_3$ & Winkel [^\circ] \\ \hline
+			Name & $i_1$ & $i_2$ & $i_3$ & Winkel [$^\circ$] \\ \hline
 			A & + & - & 0 & -30 \\ \hline
 			B & + & 0 & - & 30 \\ \hline
 			C & 0 & + & - & 90 \\ \hline
@@ -1445,45 +1445,45 @@
 			\end{tikzpicture}
 			\label{fig:20160615lsg13}
 		\end{figure}
-		\item Zuerst wird die Zeit berechnet, welche eine ganze Umdrehung braucht. Anschließend werden die Funktionen für die einzelnen Fälle berechnet.
+		\item Zuerst wird die Zeit berechnet, welche eine ganze Umdrehung braucht. Anschließend werden die Funktionen für die einzelnen Fälle berechnet. Da in der Angabe steht, dass hier nur skizziert werden soll, sind die Schritte von (\ref{glg:20160615lsg51}) bis (\ref{glg:20160615lsg52}) nicht notwendig. $t_X$ für X=A,B,C,D sind die Zeiten, welche notwendig sind, um den Sinus in den richtigen Bereich zu verschieben. Mit $-90^\circ$ wird, für die Zeiten A und B, der Sinus auf $0^\circ$ verschoben. bzw. mit $90^\circ$ bei D und E. Die $20^\circ$ stehen für die anfängeliche Verschiebung von $\Psi_M$ gegenüber der x-Achse. Die nächseten $30^\circ$ sind die Differenz bis zum nächsten Stromzeigersegment, welches in diesem Fall A ist und bei $300^\circ$ beginnt. (Generatorischer Linksbetrieb) $\Psi_M$ eilt dem Strom vorraus! Die letzten $30^\circ$ sind dazu da den Sinus in die Mitte des Segments A zu legen. Der Strom Steigt an den Rändern von den Bereichen an, weil das Moment konstant ist, und somit $i_{sq}$ konstant sein muss. Weil sich $i_{sq}$ weiterdreht und konstant ist, muss $i_{sdq}$ immer größer werden. Im Fall B,D und E wird zwischen den beiden $30^\circ$ Termen vielfache von $60^\circ$ eingefügt, um den Sinus entsprechend verschieben zu können. Die Aufteilung enspricht Tab.\ref{tab:bldc} 
 		\begin{align}
-			t_\circ& = \frac{1}{\frac{60}{n_N} \cdot 2 \pi \cdot \frac{\omega_m}{2 \pi}}= 250~ms\\
-			I_1(t)|_X & =  \sqrt{2} \cdot I_N \cdot \frac{m_{R,BLDC}}{|\Psi_M|} \cdot \frac{1}{\sin \left (\frac{360}{\frac{n_N}{60} \cdot \omega_m \cdot 1000} \cdot \left (t - t_X \right ) \right )}
-			\end{align}
-			\begin{align}
-			t_{A} &= t_\circ \cdot \frac{-90 +20+30+30}{360} = -6,94~ms\\
-			t_{B}& = t_\circ \cdot \frac{-90+20+30+60+30}{360} =34,713~ms \\
-			t_{D} &= t_\circ \cdot \frac{90+20+30+60+60+60+30}{360}=243,05~ms\\
-			t_{E}& = t_\circ \cdot \frac{90+20+30+60+60+60+60+30}{360} =284,721~ms
-			\end{align}
-			\begin{align}
-			t_{FA} &= t_\circ \cdot \frac{20 + 30}{360}=34,722~ms\\
-			t_{AB} &= t_\circ \cdot \frac{20 + 30+60}{360}=76,388~ms\\
-			t_{BC} &= t_\circ \cdot \frac{20 + 30+60+60}{360}=118,055~ms\\
-			t_{CD} &= t_\circ \cdot \frac{20 + 30+60+60+60}{360}=159,722~ms\\
-			t_{DE} &= t_\circ \cdot \frac{20 + 30+60+60+60+60}{360}=201,388~ms\\
-			t_{EF} &= t_\circ \cdot \frac{20 + 30+60+60+60+60+60}{360}=243,055~ms
+			t_\circ& = \frac{1}{\frac{n_N}{60} \cdot 2 \pi \cdot \frac{\omega_m}{2 \pi}}= 400~ms \label{glg:20160615lsg51}\\
+			I_1(t)|_X & =  \sqrt{2} \cdot I_N \cdot \frac{m_{R,BLDC}}{|\Psi_M|} \cdot \frac{1}{\sin \left (\frac{360 \cdot \frac{n_N}{60} \cdot \omega_m}{ 1000} \cdot \left (t - t_X \right ) \right )}
+		\end{align}
+		\begin{align}
+			t_{A} &= t_\circ \cdot \frac{-90 +20+30+30}{360} = -11,11~ms\\
+			t_{B}& = t_\circ \cdot \frac{-90+20+30+60+30}{360} =55,55~ms \\
+			t_{D} &= t_\circ \cdot \frac{90+20+30+60+60+60+30}{360}=255,55~ms\\
+			t_{E}& = t_\circ \cdot \frac{90+20+30+60+60+60+60+30}{360} =455.55~ms
+		\end{align}
+		\begin{align}
+			t_{FA} &= t_\circ \cdot \frac{20 + 30}{360}=55,55~ms\\
+			t_{AB} &= t_\circ \cdot \frac{20 + 30+60}{360}=122,22~ms\\
+			t_{BC} &= t_\circ \cdot \frac{20 + 30+60+60}{360}=188,88~ms\\
+			t_{CD} &= t_\circ \cdot \frac{20 + 30+60+60+60}{360}=255,55~ms\\
+			t_{DE} &= t_\circ \cdot \frac{20 + 30+60+60+60+60}{360}=322,22~ms\\
+			t_{EF} &= t_\circ \cdot \frac{20 + 30+60+60+60+60+60}{360}=388,88~ms \label{glg:20160615lsg52}
 		\end{align}
 		\begin{figure}[H]
 			\begin{tikzpicture}
 				\begin{axis}[title={Zeitverlauf},xlabel={{t} $\left [ ms \right ]$}, ylabel={{Strangstrom } $I_1$ { }$\left [ A \right ]$ },
-					xtick= {0,34.72,76.38,118.06,159.72,201.39,243.06},width=12cm,height=5cm,
-					xmin = 0,xmax = 250,
-					ytick= {-25,-20,...,25},
+					xtick= {0,55.55,122.22,188.88,255.55,322.22,388.88},width=12cm,height=5cm,
+					xmin = 0,xmax = 400,
+					ytick= {-25,-15,...,25},
 					ymin = -30 , ymax = 30,grid=major]
-					\addplot [blue,no marks,very thick ]coordinates {(0,0) (34.722 , 0) (34.722,24.494) };%F
-					\addplot [blue,no marks,very thick, domain=34.722:76.388 ] {21.213 / (sin(1.44*(x+6.94)) )}; %A
-					\addplot [blue,no marks,very thick, domain=76.388:118.055 ] {21.213 / (sin(1.44*(x-34.713)) )};%B
-					\addplot [blue,no marks,very thick ]coordinates {(118.055,24.494) (118.055 , 0) (159.722, 0) (159.722,-24.494) };%C
-					\addplot [blue,no marks,very thick, domain=159.722:201.388 ] {21.213 / (sin(1.44*(x-243.05)) )};%D
-					\addplot [blue,no marks,very thick, domain=201.388:243.055] {21.213 / (sin(1.44*(x-284.721)) )};%E
-					\addplot [blue,no marks,very thick ]coordinates {(243.055,-24.494) (243.055 , 0) (250, 0)};%F
-					\node[] at (axis cs:17.36,10) {$F$};
-					\node[] at (axis cs:55.55,10) {$A$};
-					\node[] at (axis cs:97.43,10) {$B$};
-					\node[] at (axis cs:138.893,10) {$C$};
-					\node[] at (axis cs:180.559,10) {$D$};
-					\node[] at (axis cs:222.22,10) {$E$};
+					\addplot [blue,no marks,very thick ]coordinates {(0,0) (55.55 , 0) (55.55,24.494) };%F
+					\addplot [blue,no marks,very thick, domain=55.55:122.22 ] {21.213 / (sin(0.9*(x+11.11)) )}; %A
+					\addplot [blue,no marks,very thick, domain=122.22:188.055 ] {21.213 / (sin(0.9*(x-55.55)) )};%B
+					\addplot [blue,no marks,very thick ]coordinates {(188.055,24.494) (188.055 , 0) (255.55, 0) (255.55,-24.494) };%C
+					\addplot [blue,no marks,very thick, domain=255.55:322.22 ] {21.213 / (sin(0.9*(x-388.88)) )};%D
+					\addplot [blue,no marks,very thick, domain=322.22:388.88] {21.213 / (sin(0.9*(x-455.55)) )};%E
+					\addplot [blue,no marks,very thick ]coordinates {(388.88,-24.494) (388.88 , 0) (400, 0)};%F
+					\node[] at (axis cs:22.21,10) {$F$};
+					\node[] at (axis cs:88.88,10) {$A$};
+					\node[] at (axis cs:155.55,10) {$B$};
+					\node[] at (axis cs:222.21,10) {$C$};
+					\node[] at (axis cs:288.88,10) {$D$};
+					\node[] at (axis cs:355.55,10) {$E$};
 				\end{axis}
 			\end{tikzpicture}
 			\label{fig:20160615lsg14}
@@ -1594,43 +1594,43 @@
 	\item TikZ Grafik.
 	\item Zuerst wird die Zeit berechnet, welche eine ganze Umdrehung braucht. Anschließend werden die Funktionen für die einzelnen Fälle berechnet. Da in der Angabe steht, dass hier nur skizziert werden soll, sind die Schritte von (\ref{glg:20160720lsg51}) bis (\ref{glg:20160720lsg52}) nicht notwendig. $t_X$ für X=A,B,C,D sind die Zeiten, welche notwendig sind, um den Sinus in den richtigen Bereich zu verschieben. Mit $-90^\circ$ wird, für die Zeiten A und B, der Sinus auf $0^\circ$ verschoben. bzw. mit $90^\circ$ bei D und E. Die $20^\circ$ stehen für die anfängeliche Verschiebung von $\Psi_M$ gegenüber der x-Achse. Die nächseten $30^\circ$ sind die Differenz bis zum nächsten Stromzeigersegment, welches in diesem Fall A ist und bei $300^\circ$ beginnt. (Generatorischer Linksbetrieb) $\Psi_M$ eilt dem Strom vorraus! Die letzten $30^\circ$ sind dazu da den Sinus in die Mitte des Segments A zu legen. Der Strom Steigt an den Rändern von den Bereichen an, weil das Moment konstant ist, und somit $i_{sq}$ konstant sein muss. Weil sich $i_{sq}$ weiterdreht und konstant ist, muss $i_{sdq}$ immer größer werden. Im Fall B,D und E wird zwischen den beiden $30^\circ$ Termen vielfache von $60^\circ$ eingefügt, um den Sinus entsprechend verschieben zu können. Die Aufteilung enspricht Tab.\ref{tab:bldc} 
 	\begin{align}
-	t_\circ& = \frac{1}{\frac{60}{n_N} \cdot 2 \pi \cdot \frac{\omega_m}{2 \pi}}= 250~ms \label{glg:20160720lsg51}\\
-	I_1(t)|_X & =  \sqrt{2} \cdot I_N \cdot \frac{m_{R,BLDC}}{|\Psi_M|} \cdot \frac{1}{\sin \left (\frac{360}{\frac{n_N}{60} \cdot \omega_m \cdot 1000} \cdot \left (t - t_X \right ) \right )}
+	t_\circ& = \frac{1}{\frac{n_N}{60} \cdot 2 \pi \cdot \frac{\omega_m}{2 \pi}}= 400~ms \label{glg:20160720lsg51}\\
+	I_1(t)|_X & =  \sqrt{2} \cdot I_N \cdot \frac{m_{R,BLDC}}{|\Psi_M|} \cdot \frac{1}{\sin \left (\frac{360 \cdot \frac{n_N}{60} \cdot \omega_m}{ 1000} \cdot \left (t - t_X \right ) \right )}
 	\end{align}
 	\begin{align}
-	t_{A} &= t_\circ \cdot \frac{-90 +20+30+30}{360} = -6,94~ms\\
-	t_{B}& = t_\circ \cdot \frac{-90+20+30+60+30}{360} =34,713~ms \\
-	t_{D} &= t_\circ \cdot \frac{90+20+30+60+60+60+30}{360}=243,05~ms\\
-	t_{E}& = t_\circ \cdot \frac{90+20+30+60+60+60+60+30}{360} =284,721~ms
+	t_{A} &= t_\circ \cdot \frac{-90 +20+30+30}{360} = -11,11~ms\\
+	t_{B}& = t_\circ \cdot \frac{-90+20+30+60+30}{360} =55,55~ms \\
+	t_{D} &= t_\circ \cdot \frac{90+20+30+60+60+60+30}{360}=255,55~ms\\
+	t_{E}& = t_\circ \cdot \frac{90+20+30+60+60+60+60+30}{360} =455.55~ms
 	\end{align}
 	\begin{align}
-	t_{FA} &= t_\circ \cdot \frac{20 + 30}{360}=34,722~ms\\
-	t_{AB} &= t_\circ \cdot \frac{20 + 30+60}{360}=76,388~ms\\
-	t_{BC} &= t_\circ \cdot \frac{20 + 30+60+60}{360}=118,055~ms\\
-	t_{CD} &= t_\circ \cdot \frac{20 + 30+60+60+60}{360}=159,722~ms\\
-	t_{DE} &= t_\circ \cdot \frac{20 + 30+60+60+60+60}{360}=201,388~ms\\
-	t_{EF} &= t_\circ \cdot \frac{20 + 30+60+60+60+60+60}{360}=243,055~ms \label{glg:20160720lsg52}
+	t_{FA} &= t_\circ \cdot \frac{20 + 30}{360}=55,55~ms\\
+	t_{AB} &= t_\circ \cdot \frac{20 + 30+60}{360}=122,22~ms\\
+	t_{BC} &= t_\circ \cdot \frac{20 + 30+60+60}{360}=188,88~ms\\
+	t_{CD} &= t_\circ \cdot \frac{20 + 30+60+60+60}{360}=255,55~ms\\
+	t_{DE} &= t_\circ \cdot \frac{20 + 30+60+60+60+60}{360}=322,22~ms\\
+	t_{EF} &= t_\circ \cdot \frac{20 + 30+60+60+60+60+60}{360}=388,88~ms \label{glg:20160720lsg52}
 	\end{align}
 	\begin{figure}[H]
 	\begin{tikzpicture}
-	\begin{axis}[title={Zeiverlauf},xlabel={{t} $\left [ ms \right ]$}, ylabel={{Strangstrom } $I_1$ { }$\left [ A \right ]$ },
-	xtick= {0,34.72,76.38,118.06,159.72,201.39,243.06},width=12cm,height=5cm,
-	xmin = 0,xmax = 250,
-	ytick= {-25,-20,...,25},
+	\begin{axis}[title={Zeitverlauf},xlabel={{t} $\left [ ms \right ]$}, ylabel={{Strangstrom } $I_1$ { }$\left [ A \right ]$ },
+	xtick= {0,55.55,122.22,188.88,255.55,322.22,388.88},width=12cm,height=5cm,
+	xmin = 0,xmax = 400,
+	ytick= {-25,-15,...,25},
 	ymin = -30 , ymax = 30,grid=major]
-	\addplot [blue,no marks,very thick ]coordinates {(0,0) (34.722 , 0) (34.722,24.494) };%F
-	\addplot [blue,no marks,very thick, domain=34.722:76.388 ] {21.213 / (sin(1.44*(x+6.94)) )}; %A
-	\addplot [blue,no marks,very thick, domain=76.388:118.055 ] {21.213 / (sin(1.44*(x-34.713)) )};%B
-	\addplot [blue,no marks,very thick ]coordinates {(118.055,24.494) (118.055 , 0) (159.722, 0) (159.722,-24.494) };%C
-	\addplot [blue,no marks,very thick, domain=159.722:201.388 ] {21.213 / (sin(1.44*(x-243.05)) )};%D
-	\addplot [blue,no marks,very thick, domain=201.388:243.055] {21.213 / (sin(1.44*(x-284.721)) )};%E
-	\addplot [blue,no marks,very thick ]coordinates {(243.055,-24.494) (243.055 , 0) (250, 0)};%F
-	\node[] at (axis cs:17.36,10) {$F$};
-	\node[] at (axis cs:55.55,10) {$A$};
-	\node[] at (axis cs:97.43,10) {$B$};
-	\node[] at (axis cs:138.893,10) {$C$};
-	\node[] at (axis cs:180.559,10) {$D$};
-	\node[] at (axis cs:222.22,10) {$E$};
+	\addplot [blue,no marks,very thick ]coordinates {(0,0) (55.55 , 0) (55.55,24.494) };%F
+	\addplot [blue,no marks,very thick, domain=55.55:122.22 ] {21.213 / (sin(0.9*(x+11.11)) )}; %A
+	\addplot [blue,no marks,very thick, domain=122.22:188.055 ] {21.213 / (sin(0.9*(x-55.55)) )};%B
+	\addplot [blue,no marks,very thick ]coordinates {(188.055,24.494) (188.055 , 0) (255.55, 0) (255.55,-24.494) };%C
+	\addplot [blue,no marks,very thick, domain=255.55:322.22 ] {21.213 / (sin(0.9*(x-388.88)) )};%D
+	\addplot [blue,no marks,very thick, domain=322.22:388.88] {21.213 / (sin(0.9*(x-455.55)) )};%E
+	\addplot [blue,no marks,very thick ]coordinates {(388.88,-24.494) (388.88 , 0) (400, 0)};%F
+	\node[] at (axis cs:22.21,10) {$F$};
+	\node[] at (axis cs:88.88,10) {$A$};
+	\node[] at (axis cs:155.55,10) {$B$};
+	\node[] at (axis cs:222.21,10) {$C$};
+	\node[] at (axis cs:288.88,10) {$D$};
+	\node[] at (axis cs:355.55,10) {$E$};
 	\end{axis}
 	\end{tikzpicture}
 	\label{fig:20160720lsg14}
