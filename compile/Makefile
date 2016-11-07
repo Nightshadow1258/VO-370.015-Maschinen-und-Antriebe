@@ -34,4 +34,5 @@ aread:
 	acroread ${filename}.pdf
 
 clean:
-	rm -f ${output}/main.{ps,pdf,log,aux,out,dvi,bbl,blg,toc}
+	rm -f ${output}/main.{ps,pdf,log,aux,out,dvi,bbl,blg,toc,synctex.gz}
+	rm ${output}/texput.log
