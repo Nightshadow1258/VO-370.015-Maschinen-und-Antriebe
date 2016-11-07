@@ -11,4 +11,7 @@
 *.out
 *.toc
 *.backup
+*.gz*
+*.tar*
+*.bz2*
 main.pdf

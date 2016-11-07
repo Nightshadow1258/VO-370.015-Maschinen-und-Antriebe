@@ -1,6 +1,5 @@
 VO 370.015 Maschinen und Antriebe
 
-/compile befindet sich ein skript, um die Ausgabedatei selbst zu erzeugen, bzw. um eigene Änderungen selbst zu überprüfen.
+/compile befindet sich ein makefile, um die Ausgabedatei selbst zu erzeugen, bzw. um eigene Änderungen selbst zu Überprüfen.
 /output befindet sich die aktuellste Version der erstellten Datein
-/raw befinden sich roh Datein, welche noch digitalisiert werden müssen.
-/source befinden sich die Quelldatein
+/src befinden sich die gesammten quellinformationen. Abfotographierte Angaben, skripten, Übungsskripten

@@ -1,0 +1,65 @@
+\begin{question}[topic=gsm,type=exam,tags={20150121}]
+Eine Permanentmagnet erregte Gleichstrommaschine wird an einem Stromrichter (Tiefsetzsteller) betrieben. Die Drehzahl wird durch einen Drehzahlregler \underline{auf halbe} Nenndrehzahl geregelt. Der Umrichter besitzt eine konstante Zwischenkreisspannung von $12~V$ und hat eine Schaltfrequenz von $8~kHz$. Die Gleichstrommaschine hat folgende Daten:\\
+\begin{tabular}{L{2cm}l}
+$I_{A,N}$ \dotfill &$15~A$\\
+$U_{A,N}$ \dotfill & $10~V$ \\
+$n_N$ \dotfill & $1000~\frac{U}{min}$\\
+$L_A$ \dotfill & $180~\mu H$\\
+$\Theta_m$ \dotfill & $0,002~ kg \,m^2$\\
+$R_A$ \dotfill & $0~ \Omega$
+\end{tabular}
+\begin{enumerate}
+\item Zeichnen Sie das Blockschaltbild des 1Q-Stellers inkl.Motor ab dem Zwischenkreiskondensator. (\addpoints{1})
+\item Wie groß ist das Nennmoment des Motors? (\addpoints{1})
+\item Berechnen Sie unter der Annahme einer konstanten Drehzahl des Motors den Mittelwert der nötigen Ankerspannung und das daraus resultierende Tastverhältnis $\alpha = T_{on} / T_{PWM}$ des Tiefsetzsteller im eingeschwungenen Zustand für \underline{halbes} Nennmoment des Motors sowie \underline{halber} Nenndrehzahl. (\addpoints{2})
+\item Berechnen und skizzieren Sie die Amplitude des Stromrippels zufolge des Schaltens des Umrichters. \textit{Hinweis:} Die Differenz von Umrichterspannung und innerer Spannung wirkt als anregende Spannung, wenn der Schalter des Tiefsetzsteller geschlossen ist. (\addpoints{2} +\addpoints{1} Skizze)
+\item Wie groß ist die Amplitude des daraus resultierenden Momentenrippels? (\addpoints{1})
+\item Berechnen Sie die Auslaufzeit des Antriebs nach Abschalten des Ankerstroms von halber Nenndrehzahl bis auf Stillstand, wenn kein äußeres Lastmoment anliegt aber ein konstantes Reibmoment von 5\% des Nennmoments angenommen wird. (\addpoints{2})
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item TikZ Grafik f\"ur Gleichstrommaschine mit Tiefsetzsteller.
+\item Da der Ankerwiderstand null ist, ist die Ankerspannung gleich der Induzierten Spannung bei Nenndrehzahl. Mittels Glg.(\ref{glg:Ankerspannungsgleichung}) l\"asst sich die Spannungskonstante errechnen.
+\begin{align}
+U_{A,N} &= \frac{k_1 \cdot \phi}{2 \pi} \cdot \frac{n_N}{60} \cdot 2 \pi\\
+k_1 \cdot \phi &= 0,597~Vs\\
+k^{'} \cdot \phi &= \frac{k_1 \cdot \phi}{2 \pi} = 0,095~Vs\\
+\end{align}
+Das Moment errechnet sich mit (\ref{glg:Ankermoment}).\\
+\begin{equation}
+M_N=\frac{k \Phi}{2 \pi} \cdot I_N =1,432~Nm
+\end{equation}
+\item Ausgehend von Glg.(\ref{glg:Ankerspannungsgleichung}) wird f\"ur $U_{A,N} = \delta \cdot 12V$ und f\"ur die die Drehzahl die H\"alfte eingesetzt.
+\begin{align}
+\delta \cdot U_{ZK} &= k^{'} \phi \cdot \frac{n_N}{2 \cdot 60} \cdot 2 \pi \\
+\delta &= 0,416\\
+t_{on} &= \frac{1}{8~kHz} \cdot 0,416 = 52,08~\mu s\\
+t_{off} &= \frac{1}{8~kHz} \cdot(1- 0,416) = 72,92~\mu s
+\end{align}
+\item TikZ Grafik hier.\\
+F\"ur die Berechnung des Stromrippels gehen wir von Glg.(\ref{glg:Ankerspannungsgleichung}) aus, welche auf $I_A$ umgeformt werden, wobei wir die differentiellen Anteile nicht vernachl\"assigen d\"urfen, da es sich hier um dynamische Prozesse handelt. Es muss zwischen den zwei Zust\"anden S,Offen und S,Zu (S \dots Schalter) unterschieden werden. Der Therm mit $R_A \cdot I_A$ f\"allt weg, da $R_A= 0~\Omega$ ist.
+\begin{align}
+\text{S,Offen}~~ 0 &= L_A \frac{\partial I_A}{\partial t} + k^{'} \phi \cdot \Omega_{N/2}\\
+\text{S,Zu}~~ U_{ZK} &= L_A \frac{\partial I_A}{\partial t} + k^{'} \phi \cdot \Omega_{N/2}\\
+\text{S,Offen} ~~ I_{A,Offen} &= -\frac{1}{L_A} \int \limits_{0}^{t_{off}} k^{'} \phi \cdot \Omega_{N/2} \partial t=-2,014~A\\
+\text{S,Zu}~~ I_{A,Zu}&=- \frac{1}{L_A}\int \limits_{0}^{t_{on}} U_{ZK} -k^{'} \phi \cdot \Omega_{N/2} \partial t=-2,025~A
+\end{align}
+\item Die Amplitude ist die Differenz zwischen den beiden Werten.
+\begin{align}
+I_{A,Zu}- I_{A,Offen}=11,45~mA\\
+M_\delta = (I_{A,Zu}- I_{A,Offen}) \cdot k^{'} \phi = 1,08~mNm
+\end{align}
+\item Zur Berechnung der Auslaufzeit wird die Glg.(\ref{glg:mechanische}) einmal integriert. Anschließend werden die Anfangsbedingungen eingesetzt und die Zeit ermittelt. Der Strom $I_A =0$, da die Maschine abgeschaltet wird!
+\begin{align}
+\Theta \cdot \ddot{\varphi} &= M_m - M_L\\
+\Theta \cdot \ddot{\varphi} &= k^{'} \phi \cdot I_A - M_N \cdot 0,05\\
+\dot{\varphi} &= \frac{-0,05 \cdot M_N \cdot t}{\Theta}+ C\\
+\Omega_{N/2} &= \frac{-0,05 \cdot M_N \cdot 0}{\Theta}+ C\\
+C&= \Omega_{N/2}\\
+\dot{\varphi} &= \frac{-0,05 \cdot M_N \cdot t}{\Theta}+ \Omega_{N/2}\\
+0 &= \frac{-0,05 \cdot M_N \cdot t}{\Theta}+ \Omega_{N/2}\\
+t &= 1,462~s
+\end{align}
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,58 @@
+\begin{question}[topic=psm,type=exam,tags={20150218}]
+Eine dreisträngige symetrisch aufgebaute permanentmagneterregte Synchronmaschine in Y-Schaltung mit $I_N = 4~A$ (Effektivwert) habe zu dem betrachteten Zeitpunkt $\tau_0$ einen normierten Rotorverkettungsfluss von $\underline{\Psi}_M = 1 \cdot e^{\jmath 20 ^\circ}$. Die Maschine wird im BLDC-Modus betrieben und hat zu diesem Zeitpunkt $\tau_0$ die Strangströme $I_1 = 0~A$, $I_2 = 1,9~A$ und $I_3 = -1,9~A$.
+\begin{enumerate}
+\item Berechnen Sie für diesen Zeitpunkt $\tau_0$ die bezogenen Strangströme $i_1$, $i_2$ und $i_3$ sowie den normierten statorfesten Stromraumzeiger $\underline{i}_s$. (\addpoints{2})
+\item Berechnen Sie für den Zeitpunkt $\tau_0$ den normierten Stromraumzeiger im rotorfesten Koordinatensystem und das bezogene Drehmoment der Maschine. Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen Betriebpunktes. (\addpoints{2})
+\item Berechnen Sie alternativ für einen Sinus-Betrieb zum Zeitpunkt $\tau_0$ jenen optimalen normierten Stromraumzeiger im rotorfesten und statorfesten Koordinatensystem, welcher das \underline{halbe} motorische Bezugsmoment bei positiver Drehrichtung ergibt. (Die Berechnung soll unter optimaler Drehmomentenausbeute erfolgen). Geben Sie ebenfalls die bezogenen Ströme $i_1$, $i_2$ und $i_3$ sowie die nicht bezogenen Ströme $I_1$, $I_2$ und $I_3$ in den Motorzuleitungen an. (\addpoints{3}) \label{2015021813}
+\item Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen Betriebpunktes. (\addpoints{1})\label{2015021814}
+\item Berechnen Sie den bezogenen rotorfesten Spannungsraumzeiger für den Sinus-Betrieb (ensprechend dem Punkt \ref{2015021813}.) und Punkt \ref{2015021814}.)) zum Zeitpunkt $\tau_0$, wenn die Maschine gerade stationär mit konstantem Moment bei 50\% der Bezugsdrehzahl rotiert. Verwenden Sie dazu die Maschinenparameter $r_s = 0,07$ und $l_s= 0,4$. (\addpoints{2})
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item 
+\begin{align}
+i_1 &= 0\\
+i_2 &= \frac{1,9}{\sqrt{2} \cdot 4}= 0,335\\
+i_3 &= \frac{-1,9}{\sqrt{2} \cdot 4}= -0,335\\
+\underline{i}_s &= \frac{2}{3} \left ( i_1 + i_2 \cdot e^{\jmath 120^\circ} + i_3 \cdot e^{\jmath 240^\circ}  \right ) = 0,387 \jmath
+\end{align}
+\item Im Rotorfesten Koordinatensystem ist der Stromzeiger um $20^\circ$ in negativer Drehrichtung verschoben. Der Statorstrom wird auch gleich in seine komponenten $\underline{i}_{sq}$ und $\underline{i}_{sd}$ aufgeteilt. Dann wird $\underline{i}_{sq}$ und $\Psi_M$ in Glg.(\ref{glg:synmoment}) eingesetzt.
+\begin{align}
+\underline{i}_{sdq} & = \underline{i}_s \cdot e^{-\jmath 20 ^\circ} = 0,387 \cdot e^{\jmath 90 ^\circ} \cdot e^{-\jmath 20 ^\circ} = 0,387 \cdot e^{-\jmath 70 ^\circ} \\
+\underline{i}_{sd} & = |\underline{i}_{sdq}| \cdot \cos(\arg(\underline{i}_{sdq})) = 0,387 \cdot \cos(70) = 0,132 \\
+\underline{i}_{sq} & = |\underline{i}_{sdq}| \cdot \sin(\arg(\underline{i}_{sdq})) = 0,387 \cdot \sin(70) = 0,364 \\
+m_R(\tau)& =  i_{sq} \cdot | \underline{\Psi}_M|= 0,364\cdot 1 = 0,364
+\end{align}
+Da das Moment positiv ist, ist hier ersichtlich, dass es sich um einen motorischen linksbetrieb handelt.\\
+TikZ Grafik hier.
+\item Da wir uns im motorischen linksdrehenden Sinus-Betrieb befinden ist der Stromraumzeiger $\underline{i}_{sq}$, welche das optimale \textbf{halbe} Bezugsdrehmoment liefert, gleich dem Stromraumzeiger $\underline{i}_{sdq}$. Der Winkel liegt somit exakt bei $\arg(\underline{i}_{sdq})=90^\circ$ zu $\underline{\Psi}_M$.
+\begin{align}
+m_m &= 0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
+0,5 &= \underline{i}_{sq} \cdot 1\\
+\underline{i}_{sq} &= 0,5 = \underline{i}_{sdq} \\
+\underline{i}_{sd} &= 0\\
+\underline{i}_{s} &= |\underline{i}_{sdq}| \cdot e^{\jmath (\arg(\underline{i}_{sdq}) + \arg(\underline{\Psi}_{M}))}= 0,5 \cdot e^{\jmath (90 + 20)}
+\end{align}
+In die Glg.(\ref{glg:strang1}),(\ref{glg:strang2}) und (\ref{glg:strang3}) wird der Statorstrom $\underline{i}_s$ eingesetzt.
+\begin{align}
+i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = -0,171\\
+i_2 & = \Re \{ \underline{i}_s \cdot e^{-\jmath \cdot 120 ^\circ} \} = 0,492 \\
+i_3 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 120 ^\circ} \}=  -0,321
+\end{align}
+Um die nicht bezogenen Ströme zu erhalten werden die bezogenen Ströme mit dem Bezugswert $I_N \cdot \sqrt{2}$ multipliziert. (Effektivwert auf Spitzenwert umrechnen)
+\begin{align}
+I_1 & = i_1 \cdot I_N \cdot \sqrt{2} = -0,171 \cdot 4 A \cdot \sqrt{2} =-0,967~A \\
+I_2 & = i_2 \cdot I_N \cdot \sqrt{2} = 0,492 \cdot 4 A \cdot \sqrt{2} =2,785~A \\
+I_3 & = i_3 \cdot I_N \cdot \sqrt{2} =-0,321 \cdot 4 A \cdot \sqrt{2} =-1,818~A
+\end{align}
+\item TikZ Grafik hier.
+\item Der Spannungraumzeiger im rotorfesten Koordinatensystem errechnet sich nach Glg.(\ref{glg:Statorspannungraumzeiger rotor}), wobei die partiellen Terme wegfallen, weil wir uns im station\"aren Fall befinden. F\"ur $\underline{i}_{sdq}= 0,5 e^{\jmath 110^\circ}$ einsetzen.
+\begin{align}
+\underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + l_s \cdot \frac{\partial \underline{i}_{sdq}}{\partial \tau} + \frac{\partial |\underline{\Psi}_M|}{\partial \tau} + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\
+\underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\
+&= 0,5 e^{\jmath 110^\circ} \cdot 0,07 + \jmath 0,5 \cdot 0,4 \cdot 0,5 e^{\jmath 110^\circ}+\jmath 0,5 \cdot 1\\
+&=0,508 \cdot e^{\jmath 101,91^\circ}
+\end{align}
+\end{enumerate}
+\end{solution}
