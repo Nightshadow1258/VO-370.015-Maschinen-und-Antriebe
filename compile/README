@@ -1,1 +1,3 @@
 Mit diesem Makefile lassen sich von den Quellen die Ausgabe kompilieren.
+
+mit $testpdflatex werden nur die in den letzen 20 minuten bearbeiten Datein übersetzt.
