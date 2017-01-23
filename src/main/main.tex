@@ -1,58 +1,6 @@
-% TU Wien, 370.015 Maschinen und Antriebe, Formelsammlung, Prüfungsbeispiele und Lösungen
-%Copyright (C) 2016  Painkilla@ www.et-forum.org
-%
-%This program is free software: you can redistribute it and/or modify
-%it under the terms of the GNU General Public License as published by
-%the Free Software Foundation, either version 3 of the License, or
-%(at your option) any later version.
-%
-%This program is distributed in the hope that it will be useful,
-%but WITHOUT ANY WARRANTY; without even the implied warranty of
-%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%GNU General Public License for more details.
-%
-%You should have received a copy of the GNU General Public License
-%along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
-\usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[pdftex]{graphicx}
-\usepackage{pgfplots}
-\usepackage{tikz}
-\usepackage{verbatim}
-\usepgfplotslibrary{polar}
-\usetikzlibrary{calc}
-\usepackage{amsmath}
-\pgfplotsset{compat=1.8}
-\usepackage{textcomp}
-\usepackage{geometry} % Required to change the page size to A4
-\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
-
-\usepackage{graphicx} % Required for including pictures
-
-\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
-
-\usepackage{exsheets}
-\usepackage{tabularx}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
-\linespread{1.2} % Line spacing
-\usepackage{hyperref}
-\hypersetup{pdftitle={370.015 Maschinen und Antriebe}, pdfauthor={Painkilla@www.et-forum.org}, pdfkeywords={370.015,Maschinen und Antriebe}, pdfcreator={pdflatex}, pdfborderstyle={/S/U/W 1}}
-
-
-%\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-\numberwithin{equation}{subsection}
-
-\makeatother
+\input{./src/conf/package.tex}
 \begin{document}
-	\SetupExSheets{questions-totoc=true,questions-toc-level=subsubsection}
+	
 	%----------------------------------------------------------------------------------------
 	%	TITLE PAGE
 	%----------------------------------------------------------------------------------------
@@ -98,18 +46,7 @@
 	%----------------------------------------------------------------------------------------
 	
 	\tableofcontents % Include a table of contents
-	
-	\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
-	Werter Student!\\
-	\\
-	Diese Unterlagen werden dir \textbf{kostenlos} zur Verfügung gestellt, damit Sie dir im Studium behilflich sind. Sie wurden von vielen Studierenden zusammengetragen, digitalisiert und aufgearbeitet. Ohne der Arbeit von den Studierenden wären diese Unterlagen nicht entstanden und du müsstest dir jetzt alles selber zusammensuchen und von schlecht eingescannten oder abfotographierten Seiten lernen. Zu den Beispielen gibt es verschiedene Lösungen, welche du dir auch erst mühsamst raussuchen und überprüfen müsstest. Die Zeit die du in deine Suche und recherche investierst wäre für nachfolgende Studenten verloren. Diese Unterlagen leben von der Gemeinschaft die sie betreuen. Hilf auch du mit und erweitere diese Unterlagen mit deinem Wissen, damit sie auch von nachfolgenden Studierenden genutzt werden können. Geh dazu bitte auf \href{https://github.com/Painkilla/VO-370.015-Maschinen-und-Antriebe/issues}{https://github.com/Painkilla/VO-370.015-Maschinen-und-Antriebe/issues} und schau dir in der TODO Liste an was du beitragen möchtest. Selbst das Ausbessern von Tippfehlern oder Rechtschreibung ist ein wertvoller Beitrag für das Projekt. Nütze auch die Möglichkeit zur Einsichtnahme von Prüfungen zu gehen und die Angaben anderen zur Verfügung zu stellen, damit die Qualität der Unterlagen stetig besser wird. \href{https://www.latex-project.org/get/}{\LaTeX} und \href{https://git-scm.com/downloads}{Git} sind nicht schwer zu lernen und haben auch einen Mehrwert für das Studium und das spätere Berufsleben. Sämtliche Seminar oder Bachelorarbeiten sind mit \href{https://www.latex-project.org/get/}{\LaTeX} zu schreiben. \href{https://git-scm.com/downloads}{Git} ist ideal um gemeinsam an einem Projekt zu arbeiten und es voran zu bringen. Als Student kann man auf GitHub übrigens kostenlos unbegrenzt private Projekte hosten.\\
-	Mit dem Befehl:\\
-	\texttt{\$ git clone https://github.com/Painkilla/VO-370.015-Maschinen-und-Antriebe.git}\\
-	erstellst du eine lokale Kopie des Repositorium. Du kannst dann die Dateien mit einem \href{https://www.latex-project.org/get/}{\LaTeX-Editor} deiner Wahl bearbeiten und dir das Ergebniss ansehen. Bist du auf GitHub regestriert, kannst du einen Fork(engl:Ableger) erstellen und mit den Befehlen:\\
-	\texttt{\$ git commit -m ``Dein Kommentar zu den Änderungen''}\\
-	\texttt{\$ git push}\\
-	werden deine Ergänzungen auf deinen Ableger am Server gesendet. Damit deine Ergänzungen auch in das zentrale Repositorium gelangen und allen Studierenden zur Verfügung steht musst du nur noch einen Pull-Request erstellen.
-	\newpage
+	\input{./src/conf/preambel.tex}
 	%----------------------------------------------------------------------------------------
 	%	INTRODUCTION
 	%----------------------------------------------------------------------------------------
@@ -340,14 +277,13 @@
 		\underline{i}_s = \frac{2}{3} \cdot [ i_{1} + i_{2} \cdot e^{\jmath \cdot 120 ^\circ} + i_{3} \cdot e^{\jmath \cdot 240 ^\circ}]\label{glg:BLDC-Stromzeiger}
 	\end{equation} 
 	Für den Fall A, also wenn der Stromzeiger bei $-30 ^\circ$ steht, wird in die Glg.(\ref{glg:BLDC-Stromzeiger}) für $i_{1}= 1$, $i_{2}= -1$ und $i_{3}= 0$ eingesetzt.
+	\SetupExSheets{questions-totoc=true,questions-toc-level=subsubsection}
+	\SetupExSheets[solution]{print=false}
 	\section{Prüfungen}
 	\subsection{PM-Synchronmaschine}
-	\SetupExSheets[solution]{print=true}
-	\SetupExSheets{counter-format=qu}
 	\SetupExSheets{use-topics=psm}
-	\input{./../src/exam.tex}
+	\input{./src/tmp/exm.tex}
 	\subsection{Gleichstrommaschine}
-	\SetupExSheets{counter-within=0}
 	\SetupExSheets{use-topics=gsm}
-	\input{./../src/exam.tex}
+	\input{./src/tmp/exm.tex}
 \end{document}

@@ -1,5 +1,64 @@
-VO 370.015 Maschinen und Antriebe
+Ein Linux System mit LaTeX und den in /src/conf/package.tex verwendeten Paketen wird vorausgesetzt.
 
-/compile befindet sich ein makefile, um die Ausgabedatei selbst zu erzeugen, bzw. um eigene Änderungen selbst zu Überprüfen.
-/output befindet sich die aktuellste Version der erstellten Datein
-/src befinden sich die gesammten quellinformationen. Abfotographierte Angaben, skripten, Übungsskripten
+Der /closed Ordner ist Personen, welche am Projekt beteiligt sind, vorbehalten.
+
+HOWTO:
+Im Hauptordner make all ausführen und in output liegt das Ergebnis.
+
+
+Makefile
+	test	erstellt test.pdf mit allen Datein, welche innerhalb der letzten 20 Minuten bearbeitet wurden.
+	pdf-{bsp,exm,mdl,lab,ue,skp}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
+	final		verschiebt und benennt die Datein um.
+	clean		entfernt temporäre Datein
+	all		alles wird compilliert
+/output Fertig compillierte Dokumente
+	/bsp
+		/{Lehrveranstaltung}-Beispiele-Angabe.pdf
+		/{Lehrveranstaltung}-Beispiele-Lösung.pdf
+		/{Lehrveranstaltung}-Beispiele-Hybrid.pdf
+	/exm	
+		/{YYYYMMDD} Für jeden Prüfungstag gibt es einen Unterordner
+			/{Lehrveranstaltung}-{YYYYMMDD}-Angabe.pdf
+			/{Lehrveranstaltung}-{YYYYMMDD}-Lösung.pdf
+			/{Lehrveranstaltung}-{YYYYMMDD}-Hybrid.pdf
+		Sind die Beispiele einzelnen Kapiteln zuordbar, gibt es sie gebündelt
+		/{Lehrveranstaltung}-Prüfung-Angabe.pdf
+		/{Lehrveranstaltung}-Prüfung-Lösung.pdf
+		/{Lehrveranstaltung}-Prüfung-Hybrid.pdf
+	/mdl
+	/lab
+	/ue
+	/skp
+		/{Lehrveranstaltung}-Skript.pdf
+	/tmp	temporärer Ordner fürs kompilieren
+/closed Nicht für die Öffentlichkeit bestimmte Informationen
+	/src	gleiche Struktur, jedoch für geschlossenen Personenkreis
+	/output	
+/src Quelltexte und Rohmaterial (.tex .pdf .jpeg .doc ...)
+	/bsp	Quelltexte und Rohmaterial für die Buchbeispiele
+		/{Kapitelnummer}
+			/{Subkapitelnummer}
+				/{Beispielnummer}
+					/{Beispielname}.tex
+					/{Beispielname}.jpeg	z.b. Foto von dem gerechneten Bsp
+	/exm	Quelltexte und Rohmaterial zu ganzen Prüfungen sortiert nach Datum
+		/{YYYYMMDD} Rohmaterial zu der Prüfung an diesem Tag incl. Lösungsversuch
+			/{YYYYMMDD}-N.pdf .jpeg .doc (mit N steigend)
+			/{YYYYMMDD}-Bspnr.tex (Quelltexte mit aufsteigener Bspnr)
+		/{Kapitelnummer} Wiederkehrende Beispiele, welche bestimmten Kapiteln zugeordnet werden können
+			/{Subkapitelnummer}
+				/{Beispielnummer}
+					/{Beispielname}.tex
+					/{Beispielname}.jpeg	z.b. Foto von dem gerechneten Bsp
+		/misc	Rohmaterial, welches weder einem bestimmten Prüfungstag oder Kapitel zugeordnet werden kann. (Es ist z.b. eine Sammlung von vielen Beispielen, welche in einen Dokument sind und nicht aufgeteilt werden können.)
+	Die gleiche Struktur wie bei /exm weist auch /mdl /lab /ue auf.			
+	/mdl	Quelltexte und Rohmaterial für mündliche Prüfungsfragen
+	/lab	Quelltexte und Rohmaterial für Labor
+	/ue	Quelltexte und Rohmaterial für Übungen
+	
+	/skp	Skriptum und Aufgabensammlung
+	/main	Buildorder mit Builddatein
+	/conf	Konfigurationsdatein
+	/tmp	Temporär auf dem Rechner generierte Datein
+	/hlp	Link zu Youtube Videos, zusätzliche Hilfestellungen, erklärende Texte
