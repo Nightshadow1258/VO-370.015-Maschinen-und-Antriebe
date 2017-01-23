@@ -1,0 +1,15 @@
+Wie kann ich die Ausgabe selber erstellen?
+Ein Linux System mit LaTeX und den in /src/conf/package.tex verwendeten Paketen wird vorausgesetzt.
+Je nach Lehrveranstaltung können verschiedene Ausgaben erstellt werden. In /src/main sind die .tex Datein aufgelistet, welche mit dem dazugehörendem Befehl ersetllt werden können.
+bsp: 	/src/main/bsp-ang.tex --> $ make bsp-ang 
+	/src/main/exm-lsg.tex --> $ make exm-lsg
+
+Ich habe von LaTeX keine Ahnung, möchte aber dennoch zu dem Projekt etwas beitragen:
+Neue Beispiele, Fragen mit/ohne Lösung auf einen Zettel schreiben mit skizzen, und sonstigen hilfreichen Anmerkungen.
+Zettel einscannen oder abfotographieren und in den ensprechenden Ordner ablegen und auf GitHub pushen.
+
+Ich kenne mich mit Git nicht aus:
+Hier gibt es eine sehr gute Anleitung: https://git-scm.com/book/de/v1/Los-geht%E2%80%99s
+
+Ich möchte mich aktiv beim Projekt beteiligen:
+Schau in den /src Ordner ob du Rohmaterial findest, dass noch nicht digitalisiert wurde, bzw im fertigen .pdf tauchen immer wieder Bemerkungen an Orten auf, wo noch etwas zu machen ist. 

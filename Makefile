@@ -42,4 +42,4 @@ final:
 
 clean: 
 	rm -f ${output}/*.{ps,pdf,fls,fdb,log,aux,out,dvi,bbl,blg,toc,synctex.gz}*
-	rm -f ./src/tmp/*
+	rm -f ./src/tmp/*.tex

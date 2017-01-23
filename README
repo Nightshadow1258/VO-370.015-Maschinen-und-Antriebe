@@ -1,22 +1,18 @@
-Ein Linux System mit LaTeX und den in /src/conf/package.tex verwendeten Paketen wird vorausgesetzt.
-
 Der /closed Ordner ist Personen, welche am Projekt beteiligt sind, vorbehalten.
 
-HOWTO:
-Im Hauptordner make all ausführen und in output liegt das Ergebnis.
-
+Informationen zum selber kompilieren und beitragen zum Projekt in den FAQ.txt
 
 Makefile
 	test	erstellt test.pdf mit allen Datein, welche innerhalb der letzten 20 Minuten bearbeitet wurden.
 	pdf-{bsp,exm,mdl,lab,ue,skp}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
 	final		verschiebt und benennt die Datein um.
 	clean		entfernt temporäre Datein
-	all		alles wird compilliert
+	all		alles wird compilliert (derzeit noch Fehlerhaft)
 /output Fertig compillierte Dokumente
 	/bsp
-		/{Lehrveranstaltung}-Beispiele-Angabe.pdf
-		/{Lehrveranstaltung}-Beispiele-Lösung.pdf
-		/{Lehrveranstaltung}-Beispiele-Hybrid.pdf
+		/{Lehrveranstaltung}-Beispiele-Angabe.pdf	Dokument enthält nur die Angaben
+		/{Lehrveranstaltung}-Beispiele-Lösung.pdf	Dokument enthält nur die Lösungen
+		/{Lehrveranstaltung}-Beispiele-Hybrid.pdf	Dokument enthält Angaben und Lösungen
 	/exm	
 		/{YYYYMMDD} Für jeden Prüfungstag gibt es einen Unterordner
 			/{Lehrveranstaltung}-{YYYYMMDD}-Angabe.pdf
