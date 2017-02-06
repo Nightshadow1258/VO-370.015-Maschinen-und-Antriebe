@@ -38,7 +38,27 @@ R_E &= \frac{2}{5} \cdot R_A= 50,79~m\Omega
 n(M_i) = \frac{U_A - (R_A+R_E) \frac{ M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot \frac{60}{2 \pi} =2222-0,575 \cdot M_i
 \end{equation}
 TikZ Grafik.\\
-\item Keine Ahnung.
-\item Keine Ahnung.
+\item Für n wird $0$ eingesetzt, da die Maschine steht.
+\begin{align}
+	U_A &= I_A ( R_V +R_E +R_A) +k^{'} \phi \Omega_m\\
+	M_m &= k^{'} \phi \frac{I_A^2}{I_N}\\
+	I_A &= \sqrt{\frac{1,5 M_n \cdot I_N}{k^{'} \phi}} = 275,588~A\\
+	k^{'} \phi &= \frac{1,5 M_n}{I_A} = 2,1052~Vs\\
+	U_A &= I_A (R_V +R_E +R_A) + k^{'} \phi \cdot n \cdot \frac{2 \pi}{60}\\
+	R_V&= \frac{U_A}{I_A} -R_E -R_A= 1,274~\Omega
+\end{align}
+\item 
+\begin{align}
+	M_m &= \frac{k^{'} \phi}{2} \cdot I_A = 96,694~Nm\\
+	\Theta_{GM} \frac{\partial \Omega_m}{\partial \tau} &= M_m -M_R\\
+	\Theta_{GM} \Omega_m &= (M_m -M_R)\cdot \tau + C\\
+	n&= \frac{60}{2\pi} \frac{M_m -M_R}{\Theta_{GM}}\cdot t + C\\
+	n&= 73,86 \cdot t + 2000
+\end{align}
+\begin{align}
+	U_A &= (R_A +R_E) \cdot I_A + \frac{k^{'} \phi}{2} \cdot \frac{2 \pi}{60}\cdot 73,86 \cdot t + 2000\\
+	73,86\cdot t + 2000 &= \frac{U_A -I_A (R_E + R_A)}{\frac{k^{'} \phi}{2} \cdot \frac{2 \pi}{60}}\\
+	t &= 39,105~s
+\end{align}
 \end{enumerate}
 \end{solution}
