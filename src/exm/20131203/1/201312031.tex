@@ -11,7 +11,7 @@ Eine dreisträngige symetrisch aufgebaute permanentmagneterregte Synchronmaschin
 \end{question}
 \begin{solution}
 \begin{enumerate}
-\item Das halbe generatorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = -0,5$. Im BLDC Betrieb ist der n\"achste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-40^\circ$ bei $-30^\circ$ der Fall A. \"Uber die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Str\"ome in den Motorzuleitungen zu berechnen.
+\item Das halbe generatorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = -0,5$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-40^\circ$ bei $-30^\circ$ der Fall A. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
 \begin{align}
 m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 -0,5 &= \underline{i}_{sq} \cdot 1\\
@@ -27,7 +27,7 @@ i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = 0,44\\
 i_2 & = \Re \{ \underline{i}_s \cdot e^{-\jmath \cdot 120 ^\circ} \} = -0,44 \\
 i_3 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 120 ^\circ} \}=  0
 \end{align}
-Wie in Tab.(\ref{tab:bldc}) ersichtlich muss f\"ur den Fall A $i_1= -i_2$ sein und $i_3= 0$ gelten.
+Wie in Tab.(\ref{tab:bldc}) ersichtlich muss für den Fall A $i_1= -i_2$ sein und $i_3= 0$ gelten.
 \item Da wir uns im Sinus-Betrieb befinden ist der Stromraumzeiger $\underline{i}_{sq}$, welche das optimale Bezugsdrehmoment liefert, gleich dem Stromraumzeiger $\underline{i}_{sdq}$. Der Winkel liegt somit exakt bei $\arg(\underline{i}_{sdq})=-90^\circ$ zu $\underline{\Psi}_M$.
 \begin{align}
 m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
@@ -37,7 +37,7 @@ m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 \underline{i}_{s} &= |\underline{i}_{sdq}| \cdot e^{\jmath (\arg(\underline{i}_{sdq}) + \arg(\underline{\Psi}_{M}))}= 0,5 \cdot e^{\jmath ( -90 + 50)}
 \end{align}
 \item TikZ Grafik
-\item Der Spannungraumzeiger im rotorfesten Koordinatensystem errechnet sich nach Glg.(\ref{glg:Statorspannungraumzeiger rotor}), wobei die partiellen Terme wegfallen, weil wir uns im station\"aren Fall befinden. F\"ur $\underline{i}_{sdq}= -0,5 \jmath$ einsetzen.
+\item Der Spannungraumzeiger im rotorfesten Koordinatensystem errechnet sich nach Glg.(\ref{glg:Statorspannungraumzeiger rotor}), wobei die partiellen Terme wegfallen, weil wir uns im stationären Fall befinden. Für $\underline{i}_{sdq}= -0,5 \jmath$ einsetzen.
 \begin{align}
 \underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + l_s \cdot \frac{\partial \underline{i}_{sdq}}{\partial \tau} + \frac{\partial |\underline{\Psi}_M|}{\partial \tau} + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\
 \underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\
@@ -45,7 +45,7 @@ m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 &=0,076 \cdot e^{\jmath 80,53^\circ}
 \end{align}
 \item Der Strom wird durch die Spule gehalten, deshalb ist $\partial \frac{\underline{i}_s}{\partial \tau} = \frac{m}{\partial \tau} = 0$
-\item Die Herleitung zu Glg.(\ref{glg:stromzeiger rotorfest ks}) durchf\"uhren und dann in Glg.(\ref{glg:synmoment}) einsetzen.
+\item Die Herleitung zu Glg.(\ref{glg:stromzeiger rotorfest ks}) durchführen und dann in Glg.(\ref{glg:synmoment}) einsetzen.
 \begin{equation}
 i_{sq} \cdot | \underline{\Psi}_M| = -\frac{\omega |\underline{\Psi}_M|^2 r_s}{r_s^2 + (\omega l_s)^2}
 \end{equation}

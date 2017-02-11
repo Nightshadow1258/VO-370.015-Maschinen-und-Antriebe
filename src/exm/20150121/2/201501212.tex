@@ -19,8 +19,8 @@ $R_A$ \dotfill & $0~ \Omega$
 \end{question}
 \begin{solution}
 \begin{enumerate}
-\item TikZ Grafik f\"ur Gleichstrommaschine mit Tiefsetzsteller.
-\item Da der Ankerwiderstand null ist, ist die Ankerspannung gleich der Induzierten Spannung bei Nenndrehzahl. Mittels Glg.(\ref{glg:Ankerspannungsgleichung}) l\"asst sich die Spannungskonstante errechnen.
+\item TikZ Grafik für Gleichstrommaschine mit Tiefsetzsteller.
+\item Da der Ankerwiderstand null ist, ist die Ankerspannung gleich der Induzierten Spannung bei Nenndrehzahl. Mittels Glg.(\ref{glg:Ankerspannungsgleichung}) lässt sich die Spannungskonstante errechnen.
 \begin{align}
 U_{A,N} &= \frac{k_1 \cdot \phi}{2 \pi} \cdot \frac{n_N}{60} \cdot 2 \pi\\
 k_1 \cdot \phi &= 0,597~Vs\\
@@ -30,7 +30,7 @@ Das Moment errechnet sich mit (\ref{glg:Ankermoment}).\\
 \begin{equation}
 M_N=\frac{k \Phi}{2 \pi} \cdot I_N =1,432~Nm
 \end{equation}
-\item Ausgehend von Glg.(\ref{glg:Ankerspannungsgleichung}) wird f\"ur $U_{A,N} = \delta \cdot 12V$ und f\"ur die die Drehzahl die H\"alfte eingesetzt.
+\item Ausgehend von Glg.(\ref{glg:Ankerspannungsgleichung}) wird für $U_{A,N} = \delta \cdot 12V$ und für die die Drehzahl die Hälfte eingesetzt.
 \begin{align}
 \delta \cdot U_{ZK} &= k^{'} \phi \cdot \frac{n_N}{2 \cdot 60} \cdot 2 \pi \\
 \delta &= 0,416\\
@@ -38,7 +38,7 @@ t_{on} &= \frac{1}{8~kHz} \cdot 0,416 = 52,08~\mu s\\
 t_{off} &= \frac{1}{8~kHz} \cdot(1- 0,416) = 72,92~\mu s
 \end{align}
 \item TikZ Grafik hier.\\
-F\"ur die Berechnung des Stromrippels gehen wir von Glg.(\ref{glg:Ankerspannungsgleichung}) aus, welche auf $I_A$ umgeformt werden, wobei wir die differentiellen Anteile nicht vernachl\"assigen d\"urfen, da es sich hier um dynamische Prozesse handelt. Es muss zwischen den zwei Zust\"anden S,Offen und S,Zu (S \dots Schalter) unterschieden werden. Der Therm mit $R_A \cdot I_A$ f\"allt weg, da $R_A= 0~\Omega$ ist.
+Für die Berechnung des Stromrippels gehen wir von Glg.(\ref{glg:Ankerspannungsgleichung}) aus, welche auf $I_A$ umgeformt werden, wobei wir die differentiellen Anteile nicht vernachlässigen dürfen, da es sich hier um dynamische Prozesse handelt. Es muss zwischen den zwei Zuständen S,Offen und S,Zu (S \dots Schalter) unterschieden werden. Der Therm mit $R_A \cdot I_A$ fällt weg, da $R_A= 0~\Omega$ ist.
 \begin{align}
 \text{S,Offen}~~ 0 &= L_A \frac{\partial I_A}{\partial t} + k^{'} \phi \cdot \Omega_{N/2}\\
 \text{S,Zu}~~ U_{ZK} &= L_A \frac{\partial I_A}{\partial t} + k^{'} \phi \cdot \Omega_{N/2}\\

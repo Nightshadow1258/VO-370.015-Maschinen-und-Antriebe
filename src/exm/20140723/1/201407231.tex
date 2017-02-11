@@ -18,7 +18,7 @@ i_3 &= \frac{-5,803}{12} = -0,484\\
 \underline{i}_s &= \frac{2}{3} \cdot ( i_1 + i_2 \cdot e^{\jmath 120 ^\circ} + i_3 \cdot e^{\jmath 240 ^\circ}) = 0,752 \cdot e^{\jmath 110^\circ}
 \end{align}
 \item TikZ Grafik
-\item Das \textbf{halbe motorische} Bezugsmoment bei positiver Drehzahl bedeutet $m_m = 0,5$. Im BLDC Betrieb ist der n\"achste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $40^\circ$ bei $150^\circ$ der Fall D. \"Uber die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Str\"ome in den Motorzuleitungen zu berechnen.
+\item Das \textbf{halbe motorische} Bezugsmoment bei positiver Drehzahl bedeutet $m_m = 0,5$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $40^\circ$ bei $150^\circ$ der Fall D. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
 \begin{align}
 m_m &= 0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 0,5&= \underline{i}_{sq} \cdot 1\\
@@ -34,14 +34,14 @@ i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = -0,461\\
 i_2 & = \Re \{ \underline{i}_s \cdot e^{-\jmath \cdot 120 ^\circ} \} = 0,461 \\
 i_3 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 120 ^\circ} \}=  0
 \end{align}
-Wie in Tab.(\ref{tab:bldc}) ersichtlich muss f\"ur den Fall A $i_1= -i_2$ sein und $i_3= 0$ gelten.
+Wie in Tab.(\ref{tab:bldc}) ersichtlich muss für den Fall A $i_1= -i_2$ sein und $i_3= 0$ gelten.
 \begin{align}
 I_1 & = i_1 \cdot I_N \cdot \sqrt{2} = -0,461 \cdot 12 A \cdot \sqrt{2} =7,82~A \\
 I_2 & = i_2 \cdot I_N \cdot \sqrt{2} = 0,461 \cdot 12 A \cdot \sqrt{2} =7,82~A \\
 I_3 & = i_3 \cdot I_N \cdot \sqrt{2} =0 \cdot 12 A \cdot \sqrt{2} =0~A
 \end{align}
 \item TikZ Grafik
-\item Der Spannungraumzeiger im rotorfesten Koordinatensystem errechnet sich nach Glg.(\ref{glg:Statorspannungraumzeiger rotor}), wobei die partiellen Terme wegfallen, weil wir uns im station\"aren Fall befinden. F\"ur $\underline{i}_{sdq}= 0,752 e^{\jmath 70^\circ}$ einsetzen.
+\item Der Spannungraumzeiger im rotorfesten Koordinatensystem errechnet sich nach Glg.(\ref{glg:Statorspannungraumzeiger rotor}), wobei die partiellen Terme wegfallen, weil wir uns im stationären Fall befinden. Für $\underline{i}_{sdq}= 0,752 e^{\jmath 70^\circ}$ einsetzen.
 \begin{align}
 \underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + l_s \cdot \frac{\partial \underline{i}_{sdq}}{\partial \tau} + \frac{\partial |\underline{\Psi}_M|}{\partial \tau} + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\
 \underline{u}_{sdq}(\tau) &= \underline{i}_{sdq} \cdot r_s + \jmath \omega_K \cdot l_s \cdot \underline{i}_{sdq} + \jmath \omega_K \cdot |\underline{\Psi}_M|\\

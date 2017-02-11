@@ -9,7 +9,7 @@ Eine dreisträngige symetrische aufgebaute permanentmagneterregte Synchronmaschi
 \end{question}
 \begin{solution}
 \begin{enumerate}
-\item Das motorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = 1$. Im BLDC Betrieb ist der n\"achste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-15^\circ$ bei $90^\circ$ der Fall C. \"Uber die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Str\"ome in den Motorzuleitungen zu berechnen.
+\item Das motorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = 1$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-15^\circ$ bei $90^\circ$ der Fall C. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
 \begin{align}
 m_m &= 1 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 1 &= \underline{i}_{sq} \cdot 1\\
@@ -25,7 +25,7 @@ i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = 0\\
 i_2 & = \Re \{ \underline{i}_s \cdot e^{-\jmath \cdot 120 ^\circ} \} = 0,897 \\
 i_3 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 120 ^\circ} \}=  -0,897
 \end{align}
-Wie in Tab.(\ref{tab:bldc}) ersichtlich muss f\"ur den Fall C $i_2= -i_3$ sein und $i_1= 0$ gelten.
+Wie in Tab.(\ref{tab:bldc}) ersichtlich muss für den Fall C $i_2= -i_3$ sein und $i_1= 0$ gelten.
 \item TikZ Grafik
 \item Da wir uns im Sinus-Betrieb befinden ist der Stromraumzeiger $\underline{i}_{sq}$, welche das optimale Bezugsdrehmoment liefert, gleich dem Stromraumzeiger $\underline{i}_{sdq}$. Der Winkel liegt somit exakt bei $\arg(\underline{i}_{sdq})=90^\circ$ zu $\underline{\Psi}_M$.
 \begin{align}
