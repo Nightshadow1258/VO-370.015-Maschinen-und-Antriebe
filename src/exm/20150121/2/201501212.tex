@@ -24,16 +24,16 @@ $R_A$ \dotfill & $0~ \Omega$
 \begin{align}
 U_{A,N} &= \frac{k_1 \cdot \phi}{2 \pi} \cdot \frac{n_N}{60} \cdot 2 \pi\\
 k_1 \cdot \phi &= 0,597~Vs\\
-k^{'} \cdot \phi &= \frac{k_1 \cdot \phi}{2 \pi} = 0,095~Vs\\
+k^{'} \cdot \phi &= \frac{k_1 \cdot \phi}{2 \pi} = 0,095~Vs
 \end{align}
 Das Moment errechnet sich mit (\ref{glg:Ankermoment}).\\
 \begin{equation}
 M_N=\frac{k \Phi}{2 \pi} \cdot I_N =1,432~Nm
 \end{equation}
-\item Ausgehend von Glg.(\ref{glg:Ankerspannungsgleichung}) wird für $U_{A,N} = \delta \cdot 12V$ und für die die Drehzahl die Hälfte eingesetzt.
+\item Ausgehend von Glg.(\ref{glg:Ankerspannungsgleichung}) wird für $U_{A,N} = \alpha \cdot 12V$ und für die die Drehzahl die Hälfte eingesetzt.
 \begin{align}
-\delta \cdot U_{ZK} &= k^{'} \phi \cdot \frac{n_N}{2 \cdot 60} \cdot 2 \pi \\
-\delta &= 0,416\\
+\alpha \cdot U_{ZK} &= k^{'} \phi \cdot \frac{n_N}{2 \cdot 60} \cdot 2 \pi \\
+\alpha &= 0,416\\
 t_{on} &= \frac{1}{8~kHz} \cdot 0,416 = 52,08~\mu s\\
 t_{off} &= \frac{1}{8~kHz} \cdot(1- 0,416) = 72,92~\mu s
 \end{align}
@@ -48,7 +48,7 @@ Für die Berechnung des Stromrippels gehen wir von Glg.(\ref{glg:Ankerspannungsg
 \item Die Amplitude ist die Differenz zwischen den beiden Werten.
 \begin{align}
 |I_{A,Zu}- I_{A,Offen}|=11,45~mA\\
-|M_\delta| = |(I_{A,Zu}- I_{A,Offen})| \cdot k^{'} \phi = 1,08~mNm
+|M_\alpha| = |(I_{A,Zu}- I_{A,Offen})| \cdot k^{'} \phi = 1,08~mNm
 \end{align}
 \item Zur Berechnung der Auslaufzeit wird die Glg.(\ref{glg:mechanische}) einmal integriert. Anschließend werden die Anfangsbedingungen eingesetzt und die Zeit ermittelt. Der Strom $I_A =0$, da die Maschine abgeschaltet wird!
 \begin{align}

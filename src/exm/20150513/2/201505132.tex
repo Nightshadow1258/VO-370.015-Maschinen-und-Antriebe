@@ -13,7 +13,7 @@ $n_N$ \dotfill & $1200~\frac{U}{min}$
 \item Skizzieren Sie die Drehzahl-Drehmoment Kennlinie ($M/n$) bei Nennspannung $U_{A,N} = 300~V$ im Bereich ca. $0,2 M_N$ bis $M_N$. (\addpoints{2})
 \item Die Maschine wird bei $n=500~ U/min$ auf einen Widerstand $R_L$ gebremst. Dimensionieren Sie den Bremswiderstand $R_L$ so, dass ein anfänglicher Bremsstrom von $200~A$ fließt und geben Sie die Ankerspannung $U_A$ an den Maschinenklemmen und das Bremsmoment zu Begin der Bremsung an. (\addpoints{3})
 \end{enumerate}
-\begin{figure}[H] 
+\begin{figure}[H]
 \begin{tikzpicture}
 \begin{axis}[title={{Leerlaufkennlinie} $U_i/I_E$ {bei} $n=800 ~\frac{U}{min}$},xlabel={{Erregerstrom }$I_E \, \left[A\right]$ }, ylabel={{Induzierte Spannung } $U_i \, \left [V\right]$},
 xtick= {50,100,150,200,250,300,350,400},
@@ -29,27 +29,28 @@ ymin = 0 , ymax = 240,grid=major]
 \end{question}
 \begin{solution}
 \begin{enumerate}
-\item Da es sich hier um eine \textbf{Reihenschluss}-Gleichstrommaschine handelt, ist der Strom, welcher durch die Erregerwicklung geht gleich dem Strom durch den Anker $I_A=I_E$. Aus der Abb.\ref{fig:20150513} wird bei $I_A= 280~A$ die Induzierte Spannung $U_i= 190~V$ abgelesen. Das Moment errechnet sich nach Glg.(\ref{glg:synmoment}).
+\item Da es sich hier um eine \textbf{Reihenschluss}-Gleichstrommaschine handelt, ist der Strom, welcher durch die Erregerwicklung geht gleich dem Strom durch den Anker $I_A=I_E$. Aus der Abb.\ref{fig:20150513} wird bei $I_A= 280~A$ die Induzierte Spannung $U_i= 190~V$ abgelesen. Das Moment errechnet sich nach Glg.(\ref{glg:ankermoment}).
 \begin{align}
 U_i &= k^{'} \Phi \cdot \Omega\\
 k^{'} \Phi &= \frac{U_i}{\Omega} = 2,267~Vs\\
 M_N &= k^{'} \Phi \cdot I_N = 635~Nm\\
 P_N &= U_N \cdot I_N =  84~kW
 \end{align}
-\item Mit Glg.(\ref{glg:Ankerspannungsgleichung}) wird der Ankerwiderstand durch umformen errechnet.\\
+\item Mit Glg.(\ref{glg:Ankerspannungsgleichung}) wird der Innenwiderstand durch umformen errechnet.\\
 \begin{align}
 U_{A,N} &= \frac{k_1 \Phi}{2 \pi} \cdot \frac{n_0}{60} 2 \pi\\
-R_A &= \frac{U_{A,N} - \frac{k \Phi}{2 \pi} \cdot \frac{n_N}{60} 2 \pi}{I_A}=54~m \Omega\\
+R_i &= \frac{U_{A,N} - \frac{k \Phi}{2 \pi} \cdot \frac{n_N}{60} 2 \pi}{I_A}=54~m \Omega
 \end{align}
-\item Der Wirkungsgrad errechnet sich über Glg.(\ref{glg:Wirkungsgrad}). Hier müssen aber die Verluste über die Erregerwicklung berückischtigt werden.
+Der Wirkungsgrad errechnet sich über Glg.(\ref{glg:Wirkungsgrad}). Hier müssen aber die Verluste über die Erregerwicklung berückischtigt werden.
 \begin{equation}
 \eta_N = \frac{M_N \cdot \Omega_N}{U_N \cdot I_N} =0,95
 \end{equation}
-\item Bei einem geänderten Ankerstrom wird auch eine andere Spannung induziert, wodurch $k_1 \Phi$ neu bestimmt werden muss. Aus der Abb.\ref{fig:20150513} wird bei $I_A= 140~A$ die Induzierte Spannung $U_i= 140~V$ abgelesen. Das Moment errechnet sich nach Glg.(\ref{glg:synmoment}).
+\item TikZ Grafik
+\item Bei einem geänderten Ankerstrom wird auch eine andere Spannung induziert, wodurch $k_1 \Phi$ neu bestimmt werden muss. Aus der Abb.\ref{fig:20150513} wird bei $I_A= 140~A$ die Induzierte Spannung $U_i= 150~V$ abgelesen. Das Moment errechnet sich nach Glg.(\ref{glg:ankermoment}).
 \begin{align}
-U_i &= k^{'} \Phi \cdot \Omega\\
-k^{'} \Phi &= \frac{U_i}{\Omega} = 1,79~Vs\\
-M_N &= k^{'} \Phi \cdot I_N = 250~Nm\\
+	U_i &= k^{'} \Phi \cdot \Omega = 1,79 \cdot 800 \cdot \frac{2 \pi}{60}\\
+	k^{'} \Phi &= \frac{U_i}{800 \cdot \frac{2 \pi}{60}} = 1,79~Vs\\
+M_N &= k^{'} \Phi \cdot I_N = 250~Nm
 \end{align}
 Mit Glg.(\ref{glg:Ankerspannungsgleichung}) wird die Drehzahl durch umformen und mulitplizieren mit $\frac{60}{2 \pi}$ berechnet.
 \begin{align}
