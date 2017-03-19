@@ -1,0 +1,51 @@
+\begin{question}[section=1,name={14.10.2015},mode=exm,type=bsp,tags={20151014}]
+Eine dreisträngige symetrisch aufgebaute permanentmagneterregte Synchronmaschine in Y-Schaltung mit $I_N = 25~A$ (Effektivwert) habe zu dem betrachteten Zeitpunkt $\tau_0$ einen normierten Rotorverkettungsfluss von $\underline{\Psi}_M = 1 \cdot e^{\jmath 275 ^\circ}$. Zu diesem Zeitpunkt $\tau_0$ ist der normierte statorfeste Stromraumzeiger $\underline{i}_s = 0,6 \cdot e^{\jmath 350 ^\circ}$.
+\begin{enumerate}
+\item Berechnen Sie für diesen Zeitpunkt $\tau_0$ die bezogenen Strangströme $i_1$, $i_2$ und $i_3$ sowie die nicht bezogenen Ströme $I_1$, $I_2$ und $I_3$. (\addpoints{2})
+\item Berechnen Sie für den Zeitpunkt $\tau_0$ den normierten Stromraumzeiger im rotorfesten Koordinatensystem und das bezogene Drehmoment der Maschine. Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen Betriebpunktes. (\addpoints{2})
+\item Berechnen Sie alternativ für den BLDC-Betrieb zum Zeitpunkt $\tau_0$ jenen normierten Stromraumzeiger im statorfesten Koordinatensystem, welcher das \textbf{halbe motorische} Bezugsmoment bei positiver Drehrichtung ergibt. (Die Berechnung soll unter optimaler Drehmomentenausbeute erfolgen). Geben Sie ebenfalls die d- und q- Stromkomponenten für diesen an. (\addpoints{3})
+\item Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen BLDC-Betriebpunktes. (\addpoints{1})
+\item Berechnen Sie für die Maschinendaten $r_S= 0,07$ und $l_S= 0,35$ den Verlauf des stationären Kurzschlussmoments $m(\omega_m)$ in Abhängigkeit der Drehzahl $\omega_m$ für einen kurzgeschlossenen Stator ($\underline{u}_s = 0$) und skizzieren Sie den Verlauf im Bereich $\omega_m = [0\dots1]$. (\addpoints{2})
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item In die Glg.(\ref{glg:strang1}),(\ref{glg:strang2}) und (\ref{glg:strang3}) wird der Statorstrom $\underline{i}_s$ eingesetzt.
+\begin{align}
+i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = 0,591\\
+i_2 & = \Re \{ \underline{i}_s \cdot e^{-\jmath \cdot 120 ^\circ} \} = -0,386 \\
+i_3 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 120 ^\circ} \}=  -0,205
+\end{align}
+Um die nicht bezogenen Ströme zu erhalten werden die bezogenen Ströme mit dem Bezugswert $I_N \cdot \sqrt{2}$ multipliziert. (Effektivwert auf Spitzenwert umrechnen)
+\begin{align}
+I_1 & = i_1 \cdot I_N \cdot \sqrt{2}  =20,89~A \\
+I_2 & = i_2 \cdot I_N \cdot \sqrt{2} =-13,65~A \\
+I_3 & = i_3 \cdot I_N \cdot \sqrt{2} =-7,24~A
+\end{align}
+\item Im Rotorfesten Koordinatensystem ist der Stromzeiger um $85^\circ$ in positiver Drehrichtung verschoben. Der Statorstrom wird auch gleich in seine Komponente $\underline{i}_{sq}$ und $\underline{i}_{sd}$ aufgeteilt. Dann wird $\underline{i}_{sq}$ und $\Psi_M$ in Glg.(\ref{glg:synmoment}) eingesetzt.
+\begin{align}
+\underline{i}_{sdq} & = \underline{i}_s \cdot e^{-\jmath 10 ^\circ} = 0,6 \cdot e^{-\jmath 10 ^\circ} \cdot e^{\jmath 85 ^\circ} = 0,6 \cdot e^{\jmath 75 ^\circ} \\
+\underline{i}_{sd} & = |\underline{i}_{sdq}| \cdot \cos(\arg(\underline{i}_{sdq})) = 0,6 \cdot \cos(75) = 0,155 \\
+\underline{i}_{sq} & = |\underline{i}_{sdq}| \cdot \sin(\arg(\underline{i}_{sdq})) = 0,6 \cdot \sin(75) = 0,58 \\
+m_R(\tau)& =  i_{sq} \cdot | \underline{\Psi}_M|= 0,58\cdot 1 = 0,58
+\end{align}
+Da das Moment positiv ist, ist hier ersichtlich, dass es sich um einen motorischen Linksbetrieb handelt.\\
+\textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
+\item Das \textbf{halbe} motorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = 0,5$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-85^\circ$ bei $30^\circ$ der Fall B. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
+\begin{align}
+m_m &= 0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
+0,5 &= \underline{i}_{sq} \cdot 1\\
+\underline{i}_{sq} &= 0,5\\
+\arg(\underline{i}_{sdq}) &= \arg(\underline{i}_{s}) -\arg(\underline{\Psi}_{M})=115^\circ\\
+\underline{i}_{sdq} &= \frac{\underline{i}_{sq}}{\sin(\arg(\underline{i}_{sdq}))}= 0,552\\
+\underline{i}_{sd} &= \underline{i}_{sdq} \cdot \cos(\arg(\underline{i}_{sdq})) = -0,233\\
+\underline{i}_{s} &= |\underline{i}_{sdq}| \cdot e^{\jmath (\arg(\underline{i}_{sdq}) + \arg(\underline{\Psi}_{M}))}= 0,552 \cdot e^{\jmath ( 115 + (-85))}
+\end{align}
+\item \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
+\item In Glg.(\ref{glg:synmoment}) wird der Imaginärteil von Glg.(\ref{glg:stromzeiger rotorfest ks}) eingesetzt.
+\begin{align}
+m_m(\omega_m) &= \frac{\omega |\underline{\Psi}_M|^2 r_s}{r_s^2 + (\omega l_s)^2}=\frac{0,571 \cdot \omega}{\omega^2 + 0,040}
+\end{align}
+\textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
+\end{enumerate}
+\end{solution}

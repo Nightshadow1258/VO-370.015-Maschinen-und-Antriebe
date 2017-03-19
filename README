@@ -1,61 +1,50 @@
-Der /closed Ordner ist Personen, welche am Projekt beteiligt sind, vorbehalten.
+README
 
-Informationen zum selber kompilieren und beitragen zum Projekt in den FAQ.txt
+Hier findest du einen Leitfaden, um dich in diesem Repository (Repo) zurechzufinden.
+Alle Repos sind nach der gleichen Ordnerstruktur aufgebaut. Zuerst wird zwischen Öffentlichen und 
+nicht Öffentlichen Inhalten unterschieden, anschließend erfolgt die Trennung nach der Art des Inhalts
+(Prüfung, Skriptum, Labor, Übung, Zusätzliche Infos) und zuletzt nach dem Typ des Inhalts (Rechenbeispiel,
+mündliche frage, Theoriefrage,...).
 
-Makefile
-	test	erstellt test.pdf mit allen Datein, welche innerhalb der letzten 20 Minuten bearbeitet wurden.
-	pdf-{bsp,exm,mdl,lab,ue,skp}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
-	final		verschiebt und benennt die Datein um.
+Es werden allgemein folgende Abkürzungen verwendet um dem Team unnötige Tipparbeit in der Konsole zu ersparen.
+
+Ordnerstruktur:
+Abkürzung	Deutsch		Bedeutung
+Berechtigungsgruppe:		Trennung zwischen Öffentlichen und nicht Öffentlichen Dokumenten
+cld		geschlossen	Nur für Personen, welche am Projekt beteiligt sind, zugänglich
+opn		offen		Frei zugänglich
+
+  Artengruppe:			In jeder Berechtigungsgruppe erfolgt dann die Trennung nach den Arten
+  conf		Konfiguration	Konfigurationsdatein zum erstellen der Dokumente
+  exm		Prüfung		Prüfungsrelevante Unterlagen
+  hlp		Hilfe		Zusätzliche und hilfreiche Unterlagen, welche tlw. auch zur Prüfung verwendet werden dürfen.
+  lab		Labor		Laborrelevante Unterlagen
+  main		Hauptordner	Hauptordner mit Builddatein
+  out		Ausgabe		Ausgabe der fertig kompilieren Datein
+  skp		Skriptum	Skriptum
+  tmp		temporär	Ordner mit Temporären Datein, welche während des kompilieren anfallen.
+  ue		Übung		Übungsrelevante Unterlagen
+
+    Typengruppe: 		In jeder Artengruppe erfolgt die Trennung nach Typen
+    bsp		Beispiel	Rechenbeispiel
+    mdl		Mündlich	Mündliche Fragen
+    misc	Diverse		Diverse Unterlagen, welche noch nicht sortiert sind.
+    mpc		Mehrfachauswahl	Multiple Choice Fragen
+    thr		Theorie		Textbezogene Theoriefragen
+    txt		Text		Erklärender Text
+
+      Sortierung:
+      date	Datum		Sortiert nach Datum (YYYYMMDD) ohne Punkte
+      chp	Sub/Kapitel	Sortiert nach Kapitel und Subkapiteln #nr
+      
+Build Optionen:
+ang		Angabe		Ausschließlich die Angabe zu einer Frage
+lsg		Lösung		Ausschließlich die Lösung zu einer Frage
+hyb		Hybrid		Angabe und Lösung zu einer Frage
+
+Kompilieren mit dem Makefile:
+$ make gefolgt von einem der nachfolgenden kommandos
+	test		erstellt test.pdf mit allen Datein, welche innerhalb der letzten 60 Minuten bearbeitet wurden.
+	{opn,cld}-{exm,lab,skp,ue}-{bsp,mdl,mpc,thr,txt}-{cap,date}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
 	clean		entfernt temporäre Datein
 	all		alles wird compilliert (derzeit noch Fehlerhaft)
-/output Fertig compillierte Dokumente
-	/bsp
-		/{Lehrveranstaltung}-Beispiele-Angabe.pdf	Dokument enthält nur die Angaben
-		/{Lehrveranstaltung}-Beispiele-Lösung.pdf	Dokument enthält nur die Lösungen
-		/{Lehrveranstaltung}-Beispiele-Hybrid.pdf	Dokument enthält Angaben und Lösungen
-	/exm	
-		/{YYYYMMDD} Für jeden Prüfungstag gibt es einen Unterordner
-			/{Lehrveranstaltung}-{YYYYMMDD}-Angabe.pdf
-			/{Lehrveranstaltung}-{YYYYMMDD}-Lösung.pdf
-			/{Lehrveranstaltung}-{YYYYMMDD}-Hybrid.pdf
-		Sind die Beispiele einzelnen Kapiteln zuordbar, gibt es sie gebündelt
-		/{Lehrveranstaltung}-Prüfung-Angabe.pdf
-		/{Lehrveranstaltung}-Prüfung-Lösung.pdf
-		/{Lehrveranstaltung}-Prüfung-Hybrid.pdf
-	/mdl
-	/lab
-	/ue
-	/skp
-		/{Lehrveranstaltung}-Skript.pdf
-	/tmp	temporärer Ordner fürs kompilieren
-/closed Nicht für die Öffentlichkeit bestimmte Informationen
-	/src	gleiche Struktur, jedoch für geschlossenen Personenkreis
-	/output	
-/src Quelltexte und Rohmaterial (.tex .pdf .jpeg .doc ...)
-	/bsp	Quelltexte und Rohmaterial für die Buchbeispiele
-		/{Kapitelnummer}
-			/{Subkapitelnummer}
-				/{Beispielnummer}
-					/{Beispielname}.tex
-					/{Beispielname}.jpeg	z.b. Foto von dem gerechneten Bsp
-	/exm	Quelltexte und Rohmaterial zu ganzen Prüfungen sortiert nach Datum
-		/{YYYYMMDD} Rohmaterial zu der Prüfung an diesem Tag incl. Lösungsversuch
-			/{YYYYMMDD}-N.pdf .jpeg .doc (mit N steigend)
-			/{Beispielnummer}
-				/{YYYYMMDD}-Bspnr.tex (Quelltexte mit aufsteigener Bspnr)
-		/{Kapitelnummer} Wiederkehrende Beispiele, welche bestimmten Kapiteln zugeordnet werden können
-			/{Subkapitelnummer}
-				/{Beispielnummer}
-					/{Beispielname}.tex
-					/{Beispielname}.jpeg	z.b. Foto von dem gerechneten Bsp
-		/misc	Rohmaterial, welches weder einem bestimmten Prüfungstag oder Kapitel zugeordnet werden kann. (Es ist z.b. eine Sammlung von vielen Beispielen, welche in einen Dokument sind und nicht aufgeteilt werden können.)
-	Die gleiche Struktur wie bei /exm weist auch /mdl /lab /ue auf.			
-	/mdl	Quelltexte und Rohmaterial für mündliche Prüfungsfragen
-	/lab	Quelltexte und Rohmaterial für Labor
-	/ue	Quelltexte und Rohmaterial für Übungen
-	
-	/skp	Skriptum und Aufgabensammlung
-	/main	Buildorder mit Builddatein
-	/conf	Konfigurationsdatein
-	/tmp	Temporär auf dem Rechner generierte Datein
-	/hlp	Link zu Youtube Videos, zusätzliche Hilfestellungen, erklärende Texte
