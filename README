@@ -45,6 +45,6 @@ hyb		Hybrid		Angabe und Lösung zu einer Frage
 Kompilieren mit dem Makefile:
 $ make gefolgt von einem der nachfolgenden kommandos
 	test		erstellt test.pdf mit allen Datein, welche innerhalb der letzten 60 Minuten bearbeitet wurden.
-	{opn,cld}-{exm,lab,skp,ue}-{bsp,mdl,mpc,thr,txt}-{cap,date}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
+	{opn,cld}-{exm,lab,skp,ue}-{bsp,mdl,mpc,thr,txt}-{ang,lsg,hyb}	erstellt die entsprechenden Datein
 	clean		entfernt temporäre Datein
 	all		alles wird compilliert (derzeit noch Fehlerhaft)
