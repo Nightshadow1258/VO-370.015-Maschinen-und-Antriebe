@@ -1,0 +1,48 @@
+\begin{question}[section=2,name={18.2.2015},mode=exm,type=bsp,tags={20150218}]
+Eine fremderregte Gleichstrommaschine hat folgende Daten.\\
+\begin{tabular}{L{2cm}l}
+$I_{N}$ \dotfill &$200~A$\\
+$k_1 \phi_N$ \dotfill & $15~Vs$ \\
+$n_N$ \dotfill & $1940~\frac{U}{min}$\\
+$n_0$ \dotfill & $2000~\frac{U}{min}$
+\end{tabular}
+\begin{enumerate}
+\item Berechnen Sie den Ankerwiderstand $R_A$ der Gleichstrommaschine und die Ankernennspannung. (\addpoints{2})
+\item Wie groß ist das Nennmoment $M_N$ der Gleichstrommaschine. (\addpoints{1})
+\item Berechnen Sie den Wirkungsgrad der Gleichstrommaschine im Nennpunkt. (\addpoints{1})
+\item Die Gleichstrommaschine wird mit konstanter Ankerspannung $U_A = 300~V$ versorgt, es liegt Nennerregung an. Berechnen Sie die Drehzahl in Abhängigkeit des Moments $n=f(M_i)$ und Skizzieren Sie diesen Verlauf im Bereich $\pm M_N$. (\addpoints{3})
+\item Das Feld wird nun auf die Hälfte der Nennerregung eingestellt und die Gleichstrommaschine wird mit konstanter Ankerspannung $U_A = 300~V$ versorgt, jedoch nun mit halber Nennerregung. Berechnen Sie die Drehzahl in Abhängigkeit des Moments $n= f(M_i)$ und skizzieren Sie diesen Verlauf im Bereich $\pm M_N$. Wie groß ist der benötigte Ankerstrom $I_A$ damit Nennmoment $M_N$ bei halber Nennerregung erzeugt wird? (\addpoints{3})
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item Um den Ankerwiderstand berechnen zu können wird die Ankernennspannung benötigt. Diese errechnet sich aus der Spannungskonstante mit der Leerlaufdrehzahl. Anschließend wird mit (\ref{glg:Ankerspannungsgleichung}) der Ankerwiderstand durch umformen errechnet.\\
+\begin{align}
+U_{A,N} &= \frac{k_1 \Phi}{2 \pi} \cdot \frac{n_0}{60} 2 \pi = 500~V\\
+R_A &= \frac{U_{A,N} - \frac{k \Phi}{2 \pi} \cdot \frac{n_N}{60} 2 \pi}{I_A}=75~m \Omega\\
+\end{align}
+\item Das Moment errechnet sich mit (\ref{glg:Ankermoment}).\\
+\begin{equation}
+M_N=\frac{k \Phi}{2 \pi} \cdot I_N =477,46~Nm
+\end{equation}
+\item Der Wirkungsgrad errechnet sich über Glg.(\ref{glg:Wirkungsgrad}).
+\begin{equation}
+\eta_N = \frac{M_N \cdot \Omega_N}{U_N \cdot I_N} =0,98
+\end{equation}
+\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert wird um auf $n$ zu kommen.
+\begin{equation}
+n(M_i) = \frac{U_A - R_A \frac{ M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot \frac{60}{2 \pi} =1200-0,125 \cdot M_i
+\end{equation}
+\textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!.\\
+\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt, wobei die Hälfte der Erregung $k^{'} \Phi$ eingesetzt wird und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert wird um auf $n$ zu kommen.
+\begin{equation}
+n(M_i) = \frac{U_A - R_A \frac{2 M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot 2 \cdot \frac{60}{2 \pi} =2400-0,502 \cdot M_i
+\end{equation}
+Es wird der doppelte Strom benötigt.
+\begin{align}
+M_N &= \frac{k^{'} \phi}{2} \cdot I_A\\
+I_A = \frac{2 \cdot M_N}{k^{'} \phi}
+\end{align}
+\textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!.\\
+\end{enumerate}
+\end{solution}

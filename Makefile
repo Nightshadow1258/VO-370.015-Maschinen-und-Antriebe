@@ -1,45 +1,37 @@
-input=./src/main/
-output=./output/tmp
-name= $(shell cat ./src/conf/name)
+input=./opn/main/
+output=./opn/out/tmp
+lva-name= $(shell cat ./opn/conf/name)
+lva-nr= $(shell cat ./opn/conf/nr)
+lva-type= $(shell cat ./opn/conf/type)
+
+SHELL:=/bin/bash
+
+acess= opn cld
+mode= exm hlp lab skp ue
+type= bsp mdl mpc thr txt
+sorting= chp date
+opt = ang lsg hyb
+everything=$(foreach acess,$(acess),$(foreach mode,$(mode),$(foreach type, $(type),$(foreach opt,$(opt),$(acess)-$(mode)-$(type)-$(opt)))))
 
 
-hybrid=bsp exm lab mdl skp ue
-modes-ang= $(addsuffix -ang,$(hybrid))
-modes-lsg= $(addsuffix -lsg,$(hybrid))
-modes-hyb= $(addsuffix -hyb,$(hybrid))
-modes= $(modes-ang) $(modes-lsg) $(modes-hyb)
+all:	list $(everything)
+list:
+	$(foreach acess,$(acess),$(foreach mode,$(mode),$(foreach type,$(type),$(shell find ./$(acess)/$(mode)/$(type)/ -name *.tex| sort -t '/' -k6,6 -n -k7,7 -n| awk '{printf "\\input{%s}\n", $$1}' > ./tmp/$(acess)-$(mode)-$(type).tex))))
+test:
+	find $(foreach acess,$(acess),$(foreach mode,$(mode),$(foreach type,$(type),./$(acess)/$(mode)/$(type)/))) -name *.tex -mmin -60 | sort -t '/' -k6,6 -n -k7,7 -n | awk '{printf "\\input{%s}\n", $$1}' > ./tmp/test.tex;\
+	latexmk -pdf -synctex=1 -interaction=errorstopmode -output-directory='${output}' '${input}/test.tex'\
+	mv ${output}/*.pdf ./opn/out/
 
-all: clean $(hybrid) $(modes) final
-
-$(hybrid): $(wildcard dir/$@/)
-	find ./src/$@/ ./closed/src/$@/ -name *.tex | sort -t '/' -k4,4 -n -k5,5 -n| awk '{printf "\\input{%s}\n", $$1}' > ./src/tmp/$@.tex;\
+define PROGRAMM_temp =
+$(1)-$(2)-$(3)-$(4): list
+	if [ -a "./$(1)/main/$(2)/$(2)-$(3)-$(4).tex" ]; then printf "\\input{./tmp/$(1)-$(2)-$(3).tex}" > ./tmp/input.tex ; if [ $(1) == cld ]; then printf "\n\\input{./tmp/opn-$(2)-$(3).tex}" >> ./tmp/input.tex ; fi ; latexmk -f -pdf -synctex=1 -interaction=nonstopmode -output-directory='./tmp' './$(1)/main/$(2)/$(2)-$(3)-$(4).tex'; mv ./tmp/$(2)-$(3)-$(4).pdf ./$(1)/out/$(2)/$(3)/$(lva-type)-$(lva-nr)-$(lva-name)-$(2)-$(3)-$(4).pdf; fi;
 	
-test:$(wildcard dir/src/)
-	find ./src/bsp/ ./src/mdl/ ./src/ue/ ./src/lab/ ./src/exm/ ./src/skp/ ./closed/src/bsp/ ./closed/src/mdl/ ./closed/src/ue/ ./closed/src/lab/ ./closed/src/exm/ ./closed/src/skp/ -name *.tex -mmin -20 | sort -t '/' -k4,4 -n -k5,5 -n| awk '{printf "\\input{%s}\n", $$1}' > ./src/tmp/test.tex;\
-	latexmk -pdf -synctex=1 -interaction=errorstopmode -output-directory='${output}' '${input}test.tex';\
-	
-$(modes): $(hybrid)
-	latexmk -f -pdf -synctex=1 -interaction=nonstopmode -output-directory='${output}' '${input}$@.tex';\
-	sleep 1s
-	mv ${output}/*.pdf ./output/
-final:
-	mv ./output/bsp-ang.pdf ./output/bsp/$(name)-Beispiele-Angabe.pdf;\
-	mv ./output/bsp-lsg.pdf ./output/bsp/'$(name)-Beispiele-Lösung'.pdf;\
-	mv ./output/bsp-hyb.pdf ./output/bsp/$(name)-Beispiele-Hybrid.pdf;\
-	mv ./output/exm-ang.pdf ./output/exm/'$(name)-Prüfung-Angabe'.pdf;\
-	mv ./output/exm-lsg.pdf ./output/exm/'$(name)-Prüfung-Lösung'.pdf;\
-	mv ./output/exm-hyb.pdf ./output/exm/'$(name)-Prüfung-Hybrid'.pdf;\
-	mv ./output/lab-ang.pdf ./output/lab/$(name)-Labor-Angabe.pdf;\
-	mv ./output/lab-lsg.pdf ./output/lab/'$(name)-Labor-Lösung'.pdf;\
-	mv ./output/lab-hyb.pdf ./output/lab/$(name)-Labor-Hybrid.pdf;\
-	mv ./output/mdl-ang.pdf ./output/mdl/'$(name)-Mündlich-Angabe'.pdf;\
-	mv ./output/mdl-lsg.pdf ./output/mdl/'$(name)-Mündlich-Lösung'.pdf;\
-	mv ./output/mdl-hyb.pdf ./output/mdl/'$(name)-Mündlich-Hybrid'.pdf;\
-	mv ./output/skp-ang.pdf ./output/skp/$(name)-Skriptum.pdf;\
-	mv ./output/ue-ang.pdf ./output/ue/'$(name)-Übung-Angabe'.pdf;\
-	mv ./output/ue-lsg.pdf ./output/ue/'$(name)-Übung-Lösung'.pdf;\
-	mv ./output/ue-hyb.pdf ./output/ue/'$(name)-Übung-Hybrid'.pdf;\
+endef
 
-clean: 
-	rm -f ${output}/*.{ps,pdf,fls,fdb,log,aux,out,dvi,bbl,blg,toc,synctex.gz}*
-	rm -f ./src/tmp/*.tex
+$(foreach acess,$(acess),$(foreach mode,$(mode),$(foreach type, $(type),$(foreach opt,$(opt),$(eval $(call PROGRAMM_temp,$(acess),$(mode),$(type),$(opt)))))))
+
+clean:
+	rm -f ./tmp/*.{tex,ps,pdf,fls,fdb,log,aux,out,dvi,bbl,blg,toc,synctex.gz}*
+	
+
+
