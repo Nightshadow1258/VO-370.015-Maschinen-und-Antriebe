@@ -5,13 +5,13 @@ $I_{A,N}$ \dotfill &$200~A$\\
 $U_{A,N}$ \dotfill & $40~V$ \\
 $n_N$ \dotfill & $2000~\frac{U}{min}$
 \end{tabular}
-\begin{enumerate}
+\begin{compactenum}
 \item Skizzieren Sie die Schaltung der Nebenschlussmaschine am Gleichspannungsnetz. (\addpoints{1})
 \item Wie groß ist bei Nennspannung $U_{A,N}$ im motorischen Betrieb die Spannungskonstante $k_1 \phi_N$ im Nennpunkt, das Nennmoment $M_N$ und die mechanische Nennleistung $P_N$ der Gleichstrommaschine, wenn ein Erregerwiderstand $R_E=2,5~\Omega$ verwendet wird? (\addpoints{3})
 \item Wie groß ist dabei die Leerlaufdrehzahl $n_0$ bei Nennspannung $U_{A,N}$ und wie groß ist der Ankerwiderstand $R_A$ (\addpoints{2})
 \item Berechnen Sie den Wirkungsgrad $\eta_N$ im Nennpunkt der Maschine unter Berücksichtigung des Ankerwiderstand $R_A$ und des Erregerwiderstands $R_E = 2,5~\Omega$. Die mechanischen Verluste, Bürstenverluste und Eisenverluste werden vernachlässigt. (\addpoints{1})
 \item Die Maschine wird bei einer konstanten Drehzahl $n=2000~U/min$ \underline{als Generator} mit $R_E =2,5~\Omega$ eingesetzt und mit einem umschaltbaren Lastwiderstand $R_L = 0,01\, /\, 0,02\, /\, 0,05 ~\Omega$ belastet. Berechnen Sie jeweils den Laststrom und den Erregerstrom und skizzieren Sie die (äussere) Generatorkennlinie $U_A=f(I_L)$ für die unterschiedlichen Belastungen inklusive Leerlauf des Generators mit $I_L = 0$. (\addpoints{3})
-\end{enumerate}
+\end{compactenum}
 \begin{figure}[H]
 \begin{tikzpicture}
 \begin{axis}[title={{Leerlaufkennlinie} $U_i/I_E$ {bei} $1000 ~U/min$},xlabel={{Erregerstrom }$I_E \, \left[A\right]$ }, ylabel={{Induzierte Spannung } $U_i \, \left [V\right]$},
@@ -51,7 +51,7 @@ ymin = 0 , ymax = 24,grid=major]
 \end{figure}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item Kann hier jemand mit TikZ die Schaltung programmieren und hier reinstellen?
 \item Die Spannungskonstante im Nennpunkt errechnet sich über Glg.(\ref{glg:induziertespannung}). Dazu wird über das Diagramm die Induzierte Spannung bei $I_E$ abgelesen. Einsetzen und auf $k^{'}\Phi$ umformen.
 \begin{align}
@@ -115,5 +115,5 @@ ymin = 0 , ymax = 35,grid=major]
 	\end{tikzpicture}
 	\label{fig:20160615lsg25}
 	\end{figure}
-	\end{enumerate}
+	\end{compactenum}
 \end{solution}

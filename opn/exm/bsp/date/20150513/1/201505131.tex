@@ -1,15 +1,15 @@
 \begin{question}[section=1,name={13.5.2015},mode=exm,type=bsp,tags={20150513}]
 Eine dreisträngige symetrische aufgebaute permanentmagneterregte Synchronmaschine in Sternschaltung ohne Mittelpunktleiter ($I_N = 10~A$, $U_N= 230~V$) läuft mit eingeprägter positiver Drehzahl von \textbf{30\% der Bezugsdrehzahl}. Zum Zeitpunkt $\tau_0$ ist der normierte statorfeste Rotorverkettungsfluss $\underline{\Psi}_M = 1 \cdot e^{\jmath \cdot 80 ^\circ}$.
-\begin{enumerate}
+\begin{compactenum}
 \item Berechnen Sie für einen BLDC-Betrieb jenen günstigen normierten Stromraumzeiger, welche das \textbf{halbe generatorische} Bezugsmoment bei positiver Drehzahl ergibt. Geben Sie ebenfalls die bezogenen und nicht bezogenen Ströme in den Motorzuleitungen an. (\addpoints{2})
 \item Berechnen Sie für einen Sinus-Betrieb jenen normierten Stromraumzeiger, welcher das gleiche \textbf{(halbe generatorische)} Drehmoment unter optimaler Drehmomentausnutzung bei positiver Drehrichtung ergibt. Wie groß ist das Verhältnis der Strombetrags zum BLDC-Betrieb für diesen Zeitpunkt? (\addpoints{2})\label{2015051312}
 \item Skizzieren Sie jeweils die Raumzeiger $\underline{\Psi}_M$,$\underline{i}_s$ und die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) für beide obrigen Betriebpunkte. (\addpoints{1} +\addpoints{1} Skizze)
 \item Berechnen Sie für den stationären Sinus-Betrieb (siehe Punkt \ref{2015051312}.) den bezogenen Statorspannungsraumzeiger im rotorfesten und statorfesten Koordinatensystem zum Zeitpunkt $\tau_0$ mit den Maschinendaten $r_s = 0,08$ und $l_s = 0,3$. (\addpoints{2})
 \item Berechnen Sie für die Maschinendaten $r_s=0,08$ und $l_s = 0,3$ den Verlauf des stationären Kurzschlussmoments $m(\omega_m)$ in Abhängigkeit der Drehzahl $\omega_m$ für einen kurzgeschlossenen Stator und skizzieren Sie den Verlauf. (\addpoints{2})
-\end{enumerate}
+\end{compactenum}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item Das \textbf{halbe} generatorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = -0,5$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $80^\circ$ bei $-30^\circ$ der Fall A. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
 \begin{align}
 m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
@@ -77,5 +77,5 @@ Der Spannungraumzeiger im statorfesten Koordinatensystem errechnet sich nach Glg
 m_m(\omega_m) &= \frac{\omega |\underline{\Psi}_M|^2 r_s}{r_s^2 + (\omega l_s)^2}=\frac{0,888 \cdot \omega}{\omega^2 + 0,0711}
 \end{align}
 \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
-\end{enumerate}
+\end{compactenum}
 \end{solution}

@@ -6,12 +6,12 @@ $U_{A,N}$ \dotfill & $400~V$ \\
 $n_N$ \dotfill & $2940~\frac{U}{min}$\\
 $n_0$ \dotfill & $3000~\frac{U}{min}$
 \end{tabular}
-\begin{enumerate}
+\begin{compactenum}
 \item Berechnen Sie den Ankerwiderstand $R_A$ der Gleichstrommaschine und die Spannungskonstante $k_1 \phi_N$ im Nennpunkt der Maschine. (\addpoints{2})
 \item Wie groß ist das Nennmoment $M_N$ der Gleichstrommaschine. (\addpoints{1})
 \item Die Gleichstrommaschine wird mit konstanter Ankerspannung $U_A = 400V$ versorgt, es liegt \underline{halbe} Nennerregung an. Berechnen Sie die Drehzahl in Abhängigkeit des Moments $n=f(M_i)$ und skizzieren Sie diesen Verlauf im Bereich $\pm M_N/2$. (\addpoints{3})
 \item Die Maschine wird nun als \underline{Nebenschlussgenerator} betrieben. Skizzieren Sie das Ersatzschaltbild des Generators. Der Gesamtwiderstand im Erregerkreis ist konstant und beträgt $R_E = 45~\Omega$ (Summe aus Spulen und Vorwiderstand). Aus dem Leerlaufversuch konnte folgende Kennlinie des Erregerflusses ermittelt werden. Ermitteln Sie bei konstanter Drehzahl $n = 3000 ~U/min$ die Ankerspannung $U_A$ sowie den Erregerstrom $I_E$ für den leerlaufenden Generator. (\addpoints{4})
-\end{enumerate}
+\end{compactenum}
 \begin{figure}[H]
 \begin{tikzpicture}
 \begin{axis}[title={{Generatorkennlinie} $U_i/I_E$ {bei} $3000 ~U/min$},xlabel={{Erregerstrom }$I_E \, \left[A\right]$ }, ylabel={{Spannungskonstante } $k_1 \phi \, \left [Vs\right]$},
@@ -35,7 +35,7 @@ ymin = 0 , ymax = 10,grid=major]
 \end{figure}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item Im Leerlauf ist der Ankerstrom Null und mittels Glg.(\ref{glg:Ankerspannungsgleichung}) lässt sich die Spannungskonstante errechnen.
 \begin{align}
 U_{A,N} &= \frac{k_1 \cdot \phi}{2 \pi} \cdot \frac{n_0}{60} \cdot 2 \pi\\
@@ -62,5 +62,5 @@ U_A &= (R_E +R_A)  I_A  + k^{'} \phi \cdot \Omega_m\\
 \frac{k_1 \phi}{I_E} &= \frac{R_E +R_A}{\Omega_N}\cdot 2 \pi = 0,901
 \end{align}
 Eine Gerade mit der Steigung $0,901$ einzeichnen und bei dem Schnittpunkt ablesen. $I_E= 7,4~A$ und $R_E \cdot I_E = 315~V$.
-\end{enumerate}
+\end{compactenum}
 \end{solution}

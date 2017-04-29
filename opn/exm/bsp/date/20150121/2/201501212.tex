@@ -8,17 +8,17 @@ $L_A$ \dotfill & $180~\mu H$\\
 $\Theta_m$ \dotfill & $0,002~ kg \,m^2$\\
 $R_A$ \dotfill & $0~ \Omega$
 \end{tabular}
-\begin{enumerate}
+\begin{compactenum}
 \item Zeichnen Sie das Blockschaltbild des 1Q-Stellers inkl.Motor ab dem Zwischenkreiskondensator. (\addpoints{1})
 \item Wie groß ist das Nennmoment des Motors? (\addpoints{1})
 \item Berechnen Sie unter der Annahme einer konstanten Drehzahl des Motors den Mittelwert der nötigen Ankerspannung und das daraus resultierende Tastverhältnis $\alpha = T_{on} / T_{PWM}$ des Tiefsetzsteller im eingeschwungenen Zustand für \underline{halbes} Nennmoment des Motors sowie \underline{halber} Nenndrehzahl. (\addpoints{2})
 \item Berechnen und skizzieren Sie die Amplitude des Stromrippels zufolge des Schaltens des Umrichters. \textit{Hinweis:} Die Differenz von Umrichterspannung und innerer Spannung wirkt als anregende Spannung, wenn der Schalter des Tiefsetzsteller geschlossen ist. (\addpoints{2} +\addpoints{1} Skizze)
 \item Wie groß ist die Amplitude des daraus resultierenden Momentenrippels? (\addpoints{1})
 \item Berechnen Sie die Auslaufzeit des Antriebs nach Abschalten des Ankerstroms von halber Nenndrehzahl bis auf Stillstand, wenn kein äußeres Lastmoment anliegt aber ein konstantes Reibmoment von 5\% des Nennmoments angenommen wird. (\addpoints{2})
-\end{enumerate}
+\end{compactenum}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 	\item \textbf{TODO:} Programmiere oder zeichne die Grafik für die Gleichstrommaschine mit Tiefsetzsteller und scan sie ein und lade sie hoch!
 \item Da der Ankerwiderstand null ist, ist die Ankerspannung gleich der Induzierten Spannung bei Nenndrehzahl. Mittels Glg.(\ref{glg:Ankerspannungsgleichung}) lässt sich die Spannungskonstante errechnen.
 \begin{align}
@@ -61,5 +61,5 @@ C&= \Omega_{N/2}\\
 0 &= \frac{-0,05 \cdot M_N \cdot t}{\Theta}+ \Omega_{N/2}\\
 t &= 1,462~s
 \end{align}
-\end{enumerate}
+\end{compactenum}
 \end{solution}

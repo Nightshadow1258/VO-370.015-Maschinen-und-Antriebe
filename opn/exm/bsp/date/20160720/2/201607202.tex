@@ -6,17 +6,17 @@ $P_{N,mech}$ \dotfill & $81~kW$ \\
 $n_N$ \dotfill & $2000~\frac{U}{min}$\\
 $\eta_N$ \dotfill & $90\%$
 \end{tabular}
-\begin{enumerate}
+\begin{compactenum}
 \item Skizzieren Sie die Schaltung der Reihenschlussmaschine am Gleichspannungsnetz inkl. aller Widerstände und Induktivitäten der Maschine. (\addpoints{1})
 \item Wie groß ist das Nennmoment $M_N$ und die Spannungskonstante $k_1 \cdot \phi_N$ im Nennpunkt im motorischen Betrieb? Wie groß ist die Leerlaufdrehzahl $n_0$? (\addpoints{2})
 \item Wie groß ist die Nennspannung $U_N$ und wie groß ist der Ankerwiderstand $R_A$ und der Erregerwiderstand $R_E$, wenn sich der Erregerwiderstand $R_E$ zum Ankerwiderstand $R_E:R_A=2:5$ verhält? (\addpoints{2})
 \item Skizzieren Sie ma\ss stäblich die Drehzahl-Drehmoment Kennlinie (M/n) bei Nennspannung im Bereich ca. $0,2 \cdot M_N$ bis $1,5 \cdot M_N$. (\addpoints{2})
 \item Berchnen Sie den benötigten Vorwiderstand $R_V$ wenn die Maschine bei Nennspannung $U_N$ mit $M=1,5 \cdot M_N$ aus dem Stillstand angefahren werden soll. (\addpoints{1})
 \item Die Gleichstrommaschine wird von einem Stromrichter mit konstantem, halben Nennstrom bei $n = 2000 ~U/min$ als Motor betrieben. Berechnen und Skizzieren Sie den Drehzahlverlauf $n(t)$, wenn die Last schlagartig abgekuppelt wird. Der Stromrichter liefert dabei weiterhin den konstanten Strom und schaltet die Gleichstrommaschine erst bei Erreichen einer Spannung von $U= 460~V$ ab. Wie lange dauert es bis zum Abschalten und welche Enddrehzahl wird erreicht? Das Trägheitsmoment der Gleichstrommaschine ist $\Theta_{GM} = 12 ~kg~m^2$ und das Reibungsmoment beträgt konstant $1\%$ des Nennmoments. (\addpoints{2})
-\end{enumerate}
+\end{compactenum}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
 \item Die Spannungskonstante errechnet sich durch umformen der Glg.(\ref{glg:mechanischleistung}). Durch umformen der Glg.(\ref{glg:Ankerspannungsgleichung}) auf $\Omega$ und anschließendendem mulitplizieren mir $\frac{60}{2 \pi}$ erhalten wir die Leerlaufdrehzahl. Die Ankerspannung ist dabei $\frac{P_{mech}}{0,9 I_{A,N}}$
 \begin{align}
@@ -60,5 +60,5 @@ n(M_i) = \frac{U_A - (R_A+R_E) \frac{ M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot \frac{6
 	73,86\cdot t + 2000 &= \frac{U_A -I_A (R_E + R_A)}{\frac{k^{'} \phi}{2} \cdot \frac{2 \pi}{60}}\\
 	t &= 39,105~s
 \end{align}
-\end{enumerate}
+\end{compactenum}
 \end{solution}

@@ -1,16 +1,16 @@
 \begin{question}[section=1,name={3.12.2013},mode=exm,type=bsp,tags={20131203}]
 Eine dreisträngige symetrisch aufgebaute permanentmagneterregte Synchronmaschine läuft mit eingeprägter positiver Drehzahl von $10\%$ der Bezugsdrehzahl. Zum Zeitpunkt $\tau_0$ ist der normierte statorfeste Rotorverkettungsfluss $\Psi_M = 1 \cdot e^{\jmath \cdot 50 ^\circ}$.
-\begin{enumerate}
+\begin{compactenum}
 \item Berechnen Sie für einen BLDC-Betrieb jenen günstigen normierten Stromraumzeiger zum Zeitpunkt $\tau_0$, welcher das halbe generatorische Bezugsmoment bei positiver Drehrichtung ergibt. Geben Sie ebenfalls die bezogenen Ströme in den Motorzuleitungen an. (\addpoints{2})
 \item Berechnen Sie für einen Sinus-Betrieb jenen normierten Stromraumzeiger, welcher das gleiche Drehmoment unter optimaler Drehmomentausnutzung bei positiver Drehrichtung ergibt. Wie groß ist das Verhältnis des Strombetrags zum BLDC Betrieb für diesen Zeitpunkt $\tau_0$? (\addpoints{2})
 \item Skizzieren Sie $\underline{\Psi}_M$,$\underline{i}_s$ und die dem Drehmoment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse "`U"' liegt in der reellen Achse) für beide obigen Betriebspunkte. (\addpoints{2})
 \item Berechnen Sie für den stationären Sinus-Betrieb den bezogenen Statorspannungsraumzeiger im rotorfesten Koordinatensystem zum Zeitpunkt $\tau_0$ mit den Maschinendaten $r_s = 0,05$ und $l_s = 0,25$. (\addpoints{1})
 \item Ausgehend vom Sinusbetrieb wird zum Zeitpunkt $\tau_0$ bei eingeprägter Drehzahl vom Spannungszwischenkreisumrichter ein Klemmenkurzschluss angelegt. Berechnen Sie für den Zeitpunkt $\tau_0$ die bezogene Stromänderung $\partial \underline{i}_s/\partial \tau$ sowie die Momentenänderung $\partial m/\partial \tau$. (\addpoints{2})
 \item Berechnen Sie den stationären Stromraumzeiger $ \tau \rightarrow \infty$ im rotorfesten Koordinatensystem für die kurzgeschlossene Maschine bei konstanter Drehzahl, sowie das stationäre Drehmoment. (\addpoints{3})
-\end{enumerate}
+\end{compactenum}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item Das halbe generatorische Bezugsmoment bei positiver Drehzahl bedeutet $m_m = -0,5$. Im BLDC Betrieb ist der nächste Stromzeiger gem Abb.(\ref{fig:bldc}) zu $-40^\circ$ bei $-30^\circ$ der Fall A. Über die Dreiecksbeziehungen werden $\underline{i}_{sdq}$ und $\underline{i}_{sd}$ aus $\underline{i}_{sq}$ berechnet. Anschließend wird $\underline{i}_{sdq}$ auf $\underline{i}_{s}$ umgeformt um die Ströme in den Motorzuleitungen zu berechnen.
 \begin{align}
 m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
@@ -49,5 +49,5 @@ m_m &= -0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 \begin{equation}
 i_{sq} \cdot | \underline{\Psi}_M| = -\frac{\omega |\underline{\Psi}_M|^2 r_s}{r_s^2 + (\omega l_s)^2}
 \end{equation}
-\end{enumerate}
+\end{compactenum}
 \end{solution}

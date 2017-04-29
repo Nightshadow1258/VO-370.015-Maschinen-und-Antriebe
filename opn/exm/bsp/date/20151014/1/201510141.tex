@@ -1,15 +1,15 @@
 \begin{question}[section=1,name={14.10.2015},mode=exm,type=bsp,tags={20151014}]
 Eine dreisträngige symetrisch aufgebaute permanentmagneterregte Synchronmaschine in Y-Schaltung mit $I_N = 25~A$ (Effektivwert) habe zu dem betrachteten Zeitpunkt $\tau_0$ einen normierten Rotorverkettungsfluss von $\underline{\Psi}_M = 1 \cdot e^{\jmath 275 ^\circ}$. Zu diesem Zeitpunkt $\tau_0$ ist der normierte statorfeste Stromraumzeiger $\underline{i}_s = 0,6 \cdot e^{\jmath 350 ^\circ}$.
-\begin{enumerate}
+\begin{compactenum}
 \item Berechnen Sie für diesen Zeitpunkt $\tau_0$ die bezogenen Strangströme $i_1$, $i_2$ und $i_3$ sowie die nicht bezogenen Ströme $I_1$, $I_2$ und $I_3$. (\addpoints{2})
 \item Berechnen Sie für den Zeitpunkt $\tau_0$ den normierten Stromraumzeiger im rotorfesten Koordinatensystem und das bezogene Drehmoment der Maschine. Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen Betriebpunktes. (\addpoints{2})
 \item Berechnen Sie alternativ für den BLDC-Betrieb zum Zeitpunkt $\tau_0$ jenen normierten Stromraumzeiger im statorfesten Koordinatensystem, welcher das \textbf{halbe motorische} Bezugsmoment bei positiver Drehrichtung ergibt. (Die Berechnung soll unter optimaler Drehmomentenausbeute erfolgen). Geben Sie ebenfalls die d- und q- Stromkomponenten für diesen an. (\addpoints{3})
 \item Skizzieren Sie die Raumzeiger $\underline{\Psi}_M$ und $\underline{i}_s$ sowie die dem Moment entsprechende Fläche in der komplexen Raumzeigerebene (Strangachse ``U'' liegt in der reellen Achse) des obrigen BLDC-Betriebpunktes. (\addpoints{1})
 \item Berechnen Sie für die Maschinendaten $r_S= 0,07$ und $l_S= 0,35$ den Verlauf des stationären Kurzschlussmoments $m(\omega_m)$ in Abhängigkeit der Drehzahl $\omega_m$ für einen kurzgeschlossenen Stator ($\underline{u}_s = 0$) und skizzieren Sie den Verlauf im Bereich $\omega_m = [0\dots1]$. (\addpoints{2})
-\end{enumerate}
+\end{compactenum}
 \end{question}
 \begin{solution}
-\begin{enumerate}
+\begin{compactenum}
 \item In die Glg.(\ref{glg:strang1}),(\ref{glg:strang2}) und (\ref{glg:strang3}) wird der Statorstrom $\underline{i}_s$ eingesetzt.
 \begin{align}
 i_1 & = \Re \{ \underline{i}_s \cdot e^{\jmath \cdot 0 ^\circ} \} = 0,591\\
@@ -47,5 +47,5 @@ m_m &= 0,5 = \underline{i}_{sq} \cdot |\underline{\Psi_m}|\\
 m_m(\omega_m) &= \frac{\omega |\underline{\Psi}_M|^2 r_s}{r_s^2 + (\omega l_s)^2}=\frac{0,571 \cdot \omega}{\omega^2 + 0,040}
 \end{align}
 \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
-\end{enumerate}
+\end{compactenum}
 \end{solution}
