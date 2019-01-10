@@ -29,22 +29,33 @@ k^{'}\Phi&= \frac{k \Phi}{2 \pi}
 \begin{equation}
 M_N=\frac{k \Phi}{2 \pi} \cdot I_N =477,46~Nm
 \end{equation}
-\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert um auf $n$ zu kommen.
+\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert um auf $n$ in Umdrehungen pro Minute zu kommen.
 \begin{equation}
-n(M_i) = \frac{U_A - R_A \frac{M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot \frac{60}{2 \pi}=2000-0,0837 \cdot M_i
+n(M_i) = \frac{U_A - R_A \frac{M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot \frac{60}{2 \pi}=1200-0,0837 \cdot M_i
 \end{equation}
 \item \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
+%\begin{figure}[H]
+%\center
+%\includegraphics[width=0.5\textwidth]{201307242_4}
+%\caption{Drehzahl in Abhängigkeit vom Drehmoment}
+%\end{figure}
 \item Das Moment errechnet sich mit (\ref{glg:Ankermoment}), wobei die Hälfte der Erregung $k^{'} \Phi$ eingesetzt wird.
 \begin{equation}
 M_{\frac{N}{2}} = \frac{k^{'}\Phi}{2} I_A =238,73~Nm
 \end{equation}
-\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt, wobei die Hälfte der Erregung $k^{'} \Phi$ eingesetzt wird und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert wird um auf $n$ zu kommen.
+\item Das Ankermoment (\ref{glg:Ankermoment}) wird auf $I_A$ umgeformt und in (\ref{glg:Ankerspannungsgleichung}) eingesetzt und auf $\Omega$ umgeformt, wobei die Hälfte der Erregung $k^{'} \Phi$ eingesetzt wird und Anschließend mit $\frac{60}{2 \pi}$ mulitpliziert wird um auf $n$ in Umdrehungen pro Minute zu kommen.
 \begin{equation}
-n(M_i) = \frac{U_A - R_A \frac{2 M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot 2 \cdot \frac{60}{2 \pi} =2400-0,0559 \cdot M_i
+n(M_i) = \frac{U_A - R_A \frac{2 M_i}{k^{'} \Phi}}{k^{'}\Phi} \cdot 2 \cdot \frac{60}{2 \pi} =2400-0,335 \cdot M_i
 \end{equation}
 \item \textbf{TODO:} Programmiere oder zeichne die Grafik und scan sie ein und lade sie hoch!
-\item In (\ref{glg:Wirkungsgrad}) einsetzen. Es ergeben sich drei Wirkungsgrade. (Nennwirkungsgrad, Wirkungsgrad bei $300~V$ und Nennmoment, Wirkungsgrad bei $300~V$ und halben Moment)\\
-\textbf{TODO}: Bessere Erklärung woher die Terme kommen
+%\begin{figure}[H]
+%\center
+%\includegraphics[width=0.5\textwidth]{201307242_6}
+%\caption{Drehzahl in Abhängigkeit vom Drehmoment}
+%\end{figure}
+\item In (\ref{glg:Wirkungsgrad}) einsetzen. Es ergeben sich drei Wirkungsgrade. (Nennwirkungsgrad, Wirkungsgrad bei $300~V$ und Nennmoment, Wirkungsgrad bei $300~V$ 
+Aus der allgemeinen Wirkungsgradgleichung:
+\[\eta = \frac{P_{out}}{P_{in}}\]
 \begin{align}
 \eta_N &= \frac{M_N \Omega_N}{U_{A,N} I_A} = 0,98\\
 \eta_1 &= \frac{M_N \Omega_{M_N}}{300 \cdot I_A} = 0,967\\
